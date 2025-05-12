@@ -1,0 +1,43 @@
+diff --git a/hbase-client/src/main/java/org/apache/hadoop/hbase/client/Scan.java b/hbase-client/src/main/java/org/apache/hadoop/hbase/client/Scan.java
+index 708d6c7356..0be51c41ef 100644
+--- a/hbase-client/src/main/java/org/apache/hadoop/hbase/client/Scan.java
++++ b/hbase-client/src/main/java/org/apache/hadoop/hbase/client/Scan.java
+@@ -895,7 +895,9 @@ public class Scan extends Query {
+   @Deprecated
+   public Scan setSmall(boolean small) {
+     this.small = small;
+-    this.readType = ReadType.PREAD;
++    if (small) {
++      this.readType = ReadType.PREAD;
++    }
+     return this;
+   }
+ 
+diff --git a/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestScan.java b/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestScan.java
+index b0f6b196b1..941bcabddf 100644
+--- a/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestScan.java
++++ b/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestScan.java
+@@ -18,6 +18,7 @@
+ package org.apache.hadoop.hbase.client;
+ 
+ import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertFalse;
+ import static org.junit.Assert.assertTrue;
+ import static org.junit.Assert.fail;
+ 
+@@ -292,4 +293,15 @@ public class TestScan {
+     assertTrue("Make sure copy constructor adds all the fields in the copied object",
+       EqualsBuilder.reflectionEquals(scan, scanCopy));
+   }
++
++  @Test
++  public void testScanReadType() throws Exception {
++    Scan scan = new Scan();
++    assertFalse(scan.isSmall());
++    assertEquals(ReadType.DEFAULT, scan.getReadType());
++    Scan copyScan = new Scan(scan);
++    copyScan.setSmall(scan.isSmall());
++    assertFalse(copyScan.isSmall());
++    assertEquals(ReadType.DEFAULT, copyScan.getReadType());
++  }
+ }

@@ -1,0 +1,339 @@
+rss:
+  '@version': '0.92'
+  channel:
+    build-info:
+      build-date: 22-06-2022
+      build-number: '820010'
+      version: 8.20.10
+    description: This file is an XML representation of an issue
+    item:
+      assignee:
+        '#text': Anoop Sam John
+        '@username': anoop.hbase
+      attachments: null
+      comments:
+        comment:
+        - '#text': '<p>Oh, at least on branch-2 we should test whether small is true.</p>
+
+
+            <p>On master we could remove this method as it has already been deprecated.</p>'
+          '@author': apache9
+          '@created': Mon, 8 Mar 2021 05:50:15 +0000
+          '@id': '17297083'
+        - '#text': <p>Pushed to branch-2.2+ branches.  Thanks for the quick reviews
+            Duo and Ram.</p>
+          '@author': anoop.hbase
+          '@created': Mon, 8 Mar 2021 08:35:04 +0000
+          '@id': '17297173'
+        - '#text': <p>Master still having setSmall and so I have added the fix.</p>
+          '@author': anoop.hbase
+          '@created': Mon, 8 Mar 2021 08:35:41 +0000
+          '@id': '17297174'
+        - '#text': '<p>Thanks <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=anoop.hbase"
+            class="user-hover" rel="anoop.hbase">anoop.hbase</a>.</p>
+
+
+            <p>FYI <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=apurtell"
+            class="user-hover" rel="apurtell">apurtell</a>, this seems good candidate
+            for 2.4.2 release (as the RC preparation might be ongoing/about to begin).</p>'
+          '@author': vjasani
+          '@created': Mon, 8 Mar 2021 10:33:00 +0000
+          '@id': '17297250'
+        - '#text': "<p>Results for branch branch-2.2<br/>\n\t<a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.2/185/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #185 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"green\">+1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.2/185//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.2/185//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.2/185//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 source release artifact</font><br/>\n&#8211; See build output\
+            \ for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Mon, 8 Mar 2021 15:35:25 +0000
+          '@id': '17297461'
+        - '#text': "<p>Results for branch branch-2.3<br/>\n\t<a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/181/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #181 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"green\">+1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/181/General_20Nightly_20Build_20Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/181/JDK8_20Nightly_20Build_20Report_20_28Hadoop2_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/181/JDK8_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/181/JDK11_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Mon, 8 Mar 2021 17:26:10 +0000
+          '@id': '17297562'
+        - '#text': <p>Thanks for the head's up. RC is happening today so this will
+            get in</p>
+          '@author': apurtell
+          '@created': Mon, 8 Mar 2021 17:27:22 +0000
+          '@id': '17297564'
+        - '#text': "<p>Results for branch branch-2<br/>\n\t<a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2/196/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #196 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"red\">-1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2/196/General_20Nightly_20Build_20Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2/196/JDK8_20Nightly_20Build_20Report_20_28Hadoop2_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2/196/JDK8_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2/196/JDK11_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Mon, 8 Mar 2021 18:22:01 +0000
+          '@id': '17297626'
+        - '#text': "<p>Results for branch branch-2.4<br/>\n\t<a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.4/67/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #67 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.4/67/General_20Nightly_20Build_20Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.4/67/JDK8_20Nightly_20Build_20Report_20_28Hadoop2_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.4/67/JDK8_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.4/67/JDK11_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Mon, 8 Mar 2021 21:37:06 +0000
+          '@id': '17297712'
+        - '#text': "<p>Results for branch master<br/>\n\t<a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/master/231/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #231 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/master/231/General_20Nightly_20Build_20Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/master/231/JDK8_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/master/231/JDK11_20Nightly_20Build_20Report_20_28Hadoop3_29/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Tue, 9 Mar 2021 10:18:06 +0000
+          '@id': '17297990'
+      created: Mon, 8 Mar 2021 04:15:33 +0000
+      customfields:
+        customfield:
+        - '@id': customfield_12310310
+          '@key': com.atlassian.jira.toolkit:attachments
+          customfieldname: Attachment count
+          customfieldvalues:
+            customfieldvalue: '0.0'
+        - '@id': customfield_12314020
+          '@key': com.atlassian.jira.plugins.jira-development-integration-plugin:devsummary
+          customfieldname: Development
+          customfieldvalues: null
+        - '@id': customfield_12313422
+          '@key': com.atlassian.jirafisheyeplugin:jobcheckbox
+          customfieldname: Enable Automatic Patch Review
+          customfieldvalues:
+            customfieldvalue: 'false'
+        - '@id': customfield_12310420
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Global Rank
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+        - '@id': customfield_12310191
+          '@key': com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes
+          customfieldname: Hadoop Flags
+          customfieldvalues:
+            customfieldvalue:
+              '#text': Reviewed
+              '@key': '10343'
+        - '@id': customfield_12312521
+          '@key': com.atlassian.jira.toolkit:LastCommentDate
+          customfieldname: Last public comment date
+          customfieldvalues: 4 years, 9 weeks, 6 days ago
+        - '@id': customfield_12311820
+          '@key': com.pyxis.greenhopper.jira:gh-lexo-rank
+          customfieldname: Rank
+          customfieldvalues:
+            customfieldvalue: '0|z0oe6w:'
+        - '@id': customfield_12310920
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Rank (Obsolete)
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+      description: '<p>setSmall(boolean small) takes a boolean param and it might
+        get called with false also. But with out considering that, we set read type
+        as PREAD.  <br/>
+
+        Phoenix clones Scan object and do <br/>
+
+        newScan.setSmall(scan.isSmall());<br/>
+
+        So this makes ALL types of scans from phoenix as PREAD type now. (Even full
+        table scan)</p>'
+      due: null
+      environment: null
+      fixVersion:
+      - 3.0.0-alpha-1
+      - 2.2.7
+      - 2.5.0
+      - 2.3.5
+      - 2.4.2
+      issuelinks:
+        issuelinktype:
+          '@id': '10030'
+          name: Reference
+          outwardlinks:
+            '@description': relates to
+            issuelink:
+              issuekey:
+                '#text': PHOENIX-6385
+                '@id': '13358838'
+      key:
+        '#text': HBASE-25644
+        '@id': '13362908'
+      labels:
+        label: phoenix
+      link: https://issues.apache.org/jira/browse/HBASE-25644
+      priority:
+        '#text': Critical
+        '@iconUrl': https://issues.apache.org/jira/images/icons/priorities/critical.svg
+        '@id': '2'
+      project:
+        '#text': HBase
+        '@id': '12310753'
+        '@key': HBASE
+      reporter:
+        '#text': Anoop Sam John
+        '@username': anoop.hbase
+      resolution:
+        '#text': Fixed
+        '@id': '1'
+      resolved: Mon, 8 Mar 2021 08:36:08 +0000
+      status:
+        '#text': Resolved
+        '@description': A resolution has been taken, and it is awaiting verification
+          by reporter. From here issues are either reopened, or are closed.
+        '@iconUrl': https://issues.apache.org/jira/images/icons/statuses/resolved.png
+        '@id': '5'
+      statusCategory:
+        '@colorName': green
+        '@id': '3'
+        '@key': done
+      subtasks: null
+      summary: Scan#setSmall blindly sets ReadType as PREAD
+      title: '[HBASE-25644] Scan#setSmall blindly sets ReadType as PREAD'
+      type:
+        '#text': Bug
+        '@iconUrl': https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype
+        '@id': '1'
+      updated: Fri, 12 Mar 2021 07:20:37 +0000
+      votes: '0'
+      watches: '7'
+    language: en-uk
+    link: https://issues.apache.org/jira
+    title: ASF JIRA

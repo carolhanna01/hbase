@@ -1,0 +1,221 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.8
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 8
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 22.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------< org.apache.hbase:hbase-client >--------------------
+[INFO] Building Apache HBase - Client 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-client ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:regex-property (create-license-file-path-property) @ hbase-client ---
+[INFO] No match to regex '\\' found in '/home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-jsr305) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-scala) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-commons-logging) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-jetty) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-jersey) @ hbase-client ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (default) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ hbase-client ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ hbase-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (check-aggregate-license) @ hbase-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ hbase-client ---
+[INFO] Compiling 3 source files to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ hbase-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ hbase-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- warbucks-maven-plugin:1.1.0:check (run-warbucks) @ hbase-client ---
+[INFO] Rule 0: Class Matches: 366
+[INFO] Rule 0: Class Failures: 0
+[INFO] Total class failures: 0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M4:test (default-test) @ hbase-client ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.hadoop.hbase.shaded.protobuf.TestProtobufUtil
+[INFO] Running org.apache.hadoop.hbase.filter.TestKeyOnlyFilter
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.283 s - in org.apache.hadoop.hbase.filter.TestKeyOnlyFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestLongComparator
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.18 s - in org.apache.hadoop.hbase.filter.TestLongComparator
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.098 s - in org.apache.hadoop.hbase.shaded.protobuf.TestProtobufUtil
+[INFO] Running org.apache.hadoop.hbase.filter.TestComparators
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 s - in org.apache.hadoop.hbase.filter.TestComparators
+[INFO] Running org.apache.hadoop.hbase.ipc.TestNettyRpcConnection
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.142 s - in org.apache.hadoop.hbase.ipc.TestNettyRpcConnection
+[INFO] Running org.apache.hadoop.hbase.ipc.TestHBaseRpcControllerImpl
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 s - in org.apache.hadoop.hbase.ipc.TestHBaseRpcControllerImpl
+[INFO] Running org.apache.hadoop.hbase.ipc.TestCellBlockBuilder
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.755 s - in org.apache.hadoop.hbase.ipc.TestCellBlockBuilder
+[INFO] Running org.apache.hadoop.hbase.ipc.TestConnectionId
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.898 s - in org.apache.hadoop.hbase.ipc.TestConnectionId
+[INFO] Running org.apache.hadoop.hbase.ipc.TestRpcClientDeprecatedNameMapping
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.766 s - in org.apache.hadoop.hbase.ipc.TestRpcClientDeprecatedNameMapping
+[INFO] Running org.apache.hadoop.hbase.ipc.TestFailedServersLog
+[INFO] Running org.apache.hadoop.hbase.ipc.TestIPCUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.12 s - in org.apache.hadoop.hbase.ipc.TestFailedServersLog
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 s - in org.apache.hadoop.hbase.ipc.TestIPCUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestRoundRobinPoolMap
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.373 s - in org.apache.hadoop.hbase.util.TestRoundRobinPoolMap
+[INFO] Running org.apache.hadoop.hbase.util.TestThreadLocalPoolMap
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 s - in org.apache.hadoop.hbase.util.TestThreadLocalPoolMap
+[INFO] Running org.apache.hadoop.hbase.client.TestInterfaceAlign
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.195 s - in org.apache.hadoop.hbase.client.TestInterfaceAlign
+[INFO] Running org.apache.hadoop.hbase.client.TestScan
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.716 s <<< FAILURE! - in org.apache.hadoop.hbase.client.TestScan
+[ERROR] org.apache.hadoop.hbase.client.TestScan.testScanReadType  Time elapsed: 0.033 s  <<< FAILURE!
+java.lang.AssertionError: expected:<DEFAULT> but was:<PREAD>
+	at org.apache.hadoop.hbase.client.TestScan.testScanReadType(TestScan.java:305)
+
+[INFO] Running org.apache.hadoop.hbase.client.TestPutDotHas
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 s - in org.apache.hadoop.hbase.client.TestPutDotHas
+[INFO] Running org.apache.hadoop.hbase.client.TestResultStatsUtil
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 s - in org.apache.hadoop.hbase.client.TestResultStatsUtil
+[INFO] Running org.apache.hadoop.hbase.client.TestRegionInfoDisplay
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.455 s - in org.apache.hadoop.hbase.client.TestRegionInfoDisplay
+[INFO] Running org.apache.hadoop.hbase.client.TestClientExponentialBackoff
+[INFO] Running org.apache.hadoop.hbase.client.TestTableDescriptorUtils
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.373 s - in org.apache.hadoop.hbase.client.TestClientExponentialBackoff
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.505 s - in org.apache.hadoop.hbase.client.TestTableDescriptorUtils
+[INFO] Running org.apache.hadoop.hbase.client.TestGet
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.18 s - in org.apache.hadoop.hbase.client.TestGet
+[INFO] Running org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorBuilder
+[INFO] Running org.apache.hadoop.hbase.client.TestRegionInfoBuilder
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.093 s - in org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorBuilder
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.051 s - in org.apache.hadoop.hbase.client.TestRegionInfoBuilder
+[INFO] Running org.apache.hadoop.hbase.client.TestRetriesExhaustedWithDetailsException
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.954 s - in org.apache.hadoop.hbase.client.TestRetriesExhaustedWithDetailsException
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncAdminRpcPriority
+[INFO] Running org.apache.hadoop.hbase.client.TestBufferedMutatorParams
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 s - in org.apache.hadoop.hbase.client.TestBufferedMutatorParams
+[INFO] Running org.apache.hadoop.hbase.client.TestDeleteTimeStamp
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s - in org.apache.hadoop.hbase.client.TestDeleteTimeStamp
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.763 s - in org.apache.hadoop.hbase.client.TestAsyncAdminRpcPriority
+[INFO] Running org.apache.hadoop.hbase.client.TestCoprocessorDescriptor
+[INFO] Running org.apache.hadoop.hbase.client.TestIncrement
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.604 s - in org.apache.hadoop.hbase.client.TestCoprocessorDescriptor
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.222 s - in org.apache.hadoop.hbase.client.TestIncrement
+[INFO] Running org.apache.hadoop.hbase.client.TestConnectionRegistryLeak
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.455 s - in org.apache.hadoop.hbase.client.TestConnectionRegistryLeak
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncConnectionConfiguration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.26 s - in org.apache.hadoop.hbase.client.TestAsyncConnectionConfiguration
+[INFO] Running org.apache.hadoop.hbase.client.TestMetricsConnection
+[INFO] Running org.apache.hadoop.hbase.client.TestRowComparator
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.214 s - in org.apache.hadoop.hbase.client.TestMetricsConnection
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 s - in org.apache.hadoop.hbase.client.TestRowComparator
+[INFO] Running org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorLowerCaseEnum
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.569 s - in org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorLowerCaseEnum
+[INFO] Running org.apache.hadoop.hbase.client.TestAttributes
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.395 s - in org.apache.hadoop.hbase.client.TestAttributes
+[INFO] Running org.apache.hadoop.hbase.client.TestImmutableScan
+[INFO] Running org.apache.hadoop.hbase.client.TestTableDescriptorBuilder
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.223 s - in org.apache.hadoop.hbase.client.TestImmutableScan
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.48 s - in org.apache.hadoop.hbase.client.TestTableDescriptorBuilder
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncMetaRegionLocatorFailFast
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.152 s - in org.apache.hadoop.hbase.client.TestAsyncMetaRegionLocatorFailFast
+[INFO] Running org.apache.hadoop.hbase.client.TestOperation
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.384 s - in org.apache.hadoop.hbase.client.TestOperation
+[INFO] Running org.apache.hadoop.hbase.client.TestSimpleRequestController
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.093 s - in org.apache.hadoop.hbase.client.TestSimpleRequestController
+[INFO] Running org.apache.hadoop.hbase.client.TestMasterRegistryHedgedReads
+[INFO] Running org.apache.hadoop.hbase.client.TestMutation
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 s - in org.apache.hadoop.hbase.client.TestMutation
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.906 s - in org.apache.hadoop.hbase.client.TestMasterRegistryHedgedReads
+[INFO] Running org.apache.hadoop.hbase.exceptions.TestClientExceptionsUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s - in org.apache.hadoop.hbase.exceptions.TestClientExceptionsUtil
+[INFO] Running org.apache.hadoop.hbase.security.provider.TestDefaultProviderSelector
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.426 s - in org.apache.hadoop.hbase.security.provider.TestDefaultProviderSelector
+[INFO] Running org.apache.hadoop.hbase.security.provider.TestSaslClientAuthenticationProviders
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.525 s - in org.apache.hadoop.hbase.security.provider.TestSaslClientAuthenticationProviders
+[INFO] Running org.apache.hadoop.hbase.security.token.TestClientTokenUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in org.apache.hadoop.hbase.security.token.TestClientTokenUtil
+[INFO] Running org.apache.hadoop.hbase.security.TestHBaseSaslRpcClient
+[INFO] Running org.apache.hadoop.hbase.security.TestEncryptionUtil
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.752 s - in org.apache.hadoop.hbase.security.TestEncryptionUtil
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.59 s - in org.apache.hadoop.hbase.security.TestHBaseSaslRpcClient
+[INFO] Running org.apache.hadoop.hbase.security.TestSaslUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s - in org.apache.hadoop.hbase.security.TestSaslUtil
+[INFO] Running org.apache.hadoop.hbase.TestRegionLocations
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.493 s - in org.apache.hadoop.hbase.TestRegionLocations
+[INFO] Running org.apache.hadoop.hbase.TestCatalogFamilyFormat
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.318 s - in org.apache.hadoop.hbase.TestCatalogFamilyFormat
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZNodePaths
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 s - in org.apache.hadoop.hbase.zookeeper.TestZNodePaths
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationPeerConfig
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.361 s - in org.apache.hadoop.hbase.replication.TestReplicationPeerConfig
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaSettingsFactory
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.504 s - in org.apache.hadoop.hbase.quotas.TestQuotaSettingsFactory
+[INFO] Running org.apache.hadoop.hbase.quotas.TestSpaceLimitSettings
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.867 s - in org.apache.hadoop.hbase.quotas.TestSpaceLimitSettings
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaGlobalsSettingsBypass
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s - in org.apache.hadoop.hbase.quotas.TestQuotaGlobalsSettingsBypass
+[INFO] Running org.apache.hadoop.hbase.quotas.TestThrottleSettings
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.377 s - in org.apache.hadoop.hbase.quotas.TestThrottleSettings
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaFilter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 s - in org.apache.hadoop.hbase.quotas.TestQuotaFilter
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   TestScan.testScanReadType:305 expected:<DEFAULT> but was:<PREAD>
+[INFO] 
+[ERROR] Tests run: 237, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:11 min
+[INFO] Finished at: 2025-05-12T16:30:55+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M4:test (default-test) on project hbase-client: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
