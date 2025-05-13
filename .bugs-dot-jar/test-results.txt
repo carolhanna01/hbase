@@ -1,0 +1,252 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.8
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 8
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 22.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------< org.apache.hbase:hbase-client >--------------------
+[INFO] Building Apache HBase - Client 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-jsr305) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-scala) @ hbase-client ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (default) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-illegal-imports) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ hbase-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ hbase-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (check-aggregate-license) @ hbase-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ hbase-client ---
+[INFO] Compiling 5 source files to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ hbase-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ hbase-client ---
+[INFO] Compiling 1 source file to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/test-classes
+[INFO] 
+[INFO] --- warbucks-maven-plugin:1.1.0:check (run-warbucks) @ hbase-client ---
+[INFO] Rule 0: Class Matches: 372
+[INFO] Rule 0: Class Failures: 0
+[INFO] Total class failures: 0
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ hbase-client ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.hadoop.hbase.shaded.protobuf.TestProtobufUtil
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.54 s - in org.apache.hadoop.hbase.shaded.protobuf.TestProtobufUtil
+[INFO] Running org.apache.hadoop.hbase.filter.TestKeyOnlyFilter
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.122 s - in org.apache.hadoop.hbase.filter.TestKeyOnlyFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestLongComparator
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.152 s - in org.apache.hadoop.hbase.filter.TestLongComparator
+[INFO] Running org.apache.hadoop.hbase.filter.TestComparators
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s - in org.apache.hadoop.hbase.filter.TestComparators
+[INFO] Running org.apache.hadoop.hbase.ipc.TestHBaseRpcControllerImpl
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in org.apache.hadoop.hbase.ipc.TestHBaseRpcControllerImpl
+[INFO] Running org.apache.hadoop.hbase.ipc.TestCellBlockBuilder
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 s - in org.apache.hadoop.hbase.ipc.TestCellBlockBuilder
+[INFO] Running org.apache.hadoop.hbase.ipc.TestRpcClientDeprecatedNameMapping
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.459 s - in org.apache.hadoop.hbase.ipc.TestRpcClientDeprecatedNameMapping
+[INFO] Running org.apache.hadoop.hbase.ipc.TestFailedServersLog
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 s - in org.apache.hadoop.hbase.ipc.TestFailedServersLog
+[INFO] Running org.apache.hadoop.hbase.ipc.TestIPCUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s - in org.apache.hadoop.hbase.ipc.TestIPCUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestRoundRobinPoolMap
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 s - in org.apache.hadoop.hbase.util.TestRoundRobinPoolMap
+[INFO] Running org.apache.hadoop.hbase.util.TestReusablePoolMap
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 s - in org.apache.hadoop.hbase.util.TestReusablePoolMap
+[INFO] Running org.apache.hadoop.hbase.util.TestThreadLocalPoolMap
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s - in org.apache.hadoop.hbase.util.TestThreadLocalPoolMap
+[INFO] Running org.apache.hadoop.hbase.client.TestReversedScannerCallable
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 s - in org.apache.hadoop.hbase.client.TestReversedScannerCallable
+[INFO] Running org.apache.hadoop.hbase.client.TestInterfaceAlign
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in org.apache.hadoop.hbase.client.TestInterfaceAlign
+[INFO] Running org.apache.hadoop.hbase.client.TestScan
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s - in org.apache.hadoop.hbase.client.TestScan
+[INFO] Running org.apache.hadoop.hbase.client.TestPutDotHas
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 s - in org.apache.hadoop.hbase.client.TestPutDotHas
+[INFO] Running org.apache.hadoop.hbase.client.TestImmutableHTableDescriptor
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.425 s - in org.apache.hadoop.hbase.client.TestImmutableHTableDescriptor
+[INFO] Running org.apache.hadoop.hbase.client.TestRegionInfoDisplay
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.307 s - in org.apache.hadoop.hbase.client.TestRegionInfoDisplay
+[INFO] Running org.apache.hadoop.hbase.client.TestClientExponentialBackoff
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.19 s - in org.apache.hadoop.hbase.client.TestClientExponentialBackoff
+[INFO] Running org.apache.hadoop.hbase.client.TestImmutableHRegionInfo
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 s - in org.apache.hadoop.hbase.client.TestImmutableHRegionInfo
+[INFO] Running org.apache.hadoop.hbase.client.TestClientScanner
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.041 s - in org.apache.hadoop.hbase.client.TestClientScanner
+[INFO] Running org.apache.hadoop.hbase.client.TestTableDescriptorUtils
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 s - in org.apache.hadoop.hbase.client.TestTableDescriptorUtils
+[INFO] Running org.apache.hadoop.hbase.client.TestGet
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.693 s - in org.apache.hadoop.hbase.client.TestGet
+[INFO] Running org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorBuilder
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.541 s - in org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorBuilder
+[INFO] Running org.apache.hadoop.hbase.client.TestRetriesExhaustedWithDetailsException
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 s - in org.apache.hadoop.hbase.client.TestRetriesExhaustedWithDetailsException
+[INFO] Running org.apache.hadoop.hbase.client.TestBufferedMutatorParams
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 s - in org.apache.hadoop.hbase.client.TestBufferedMutatorParams
+[INFO] Running org.apache.hadoop.hbase.client.TestDeleteTimeStamp
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in org.apache.hadoop.hbase.client.TestDeleteTimeStamp
+[INFO] Running org.apache.hadoop.hbase.client.TestCoprocessorDescriptor
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s - in org.apache.hadoop.hbase.client.TestCoprocessorDescriptor
+[INFO] Running org.apache.hadoop.hbase.client.TestDelayingRunner
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.054 s - in org.apache.hadoop.hbase.client.TestDelayingRunner
+[INFO] Running org.apache.hadoop.hbase.client.TestIncrement
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 s - in org.apache.hadoop.hbase.client.TestIncrement
+[INFO] Running org.apache.hadoop.hbase.client.TestSnapshotFromAdmin
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.819 s - in org.apache.hadoop.hbase.client.TestSnapshotFromAdmin
+[INFO] Running org.apache.hadoop.hbase.client.TestImmutableHColumnDescriptor
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.391 s - in org.apache.hadoop.hbase.client.TestImmutableHColumnDescriptor
+[INFO] Running org.apache.hadoop.hbase.client.TestProcedureFuture
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.38 s - in org.apache.hadoop.hbase.client.TestProcedureFuture
+[INFO] Running org.apache.hadoop.hbase.client.TestMetricsConnection
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s - in org.apache.hadoop.hbase.client.TestMetricsConnection
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncProcessWithRegionException
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.571 s - in org.apache.hadoop.hbase.client.TestAsyncProcessWithRegionException
+[INFO] Running org.apache.hadoop.hbase.client.TestRowComparator
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in org.apache.hadoop.hbase.client.TestRowComparator
+[INFO] Running org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorLowerCaseEnum
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in org.apache.hadoop.hbase.client.TestColumnFamilyDescriptorLowerCaseEnum
+[INFO] Running org.apache.hadoop.hbase.client.TestAttributes
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s - in org.apache.hadoop.hbase.client.TestAttributes
+[INFO] Running org.apache.hadoop.hbase.client.TestBufferedMutator
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.596 s - in org.apache.hadoop.hbase.client.TestBufferedMutator
+[INFO] Running org.apache.hadoop.hbase.client.TestTableDescriptorBuilder
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.761 s - in org.apache.hadoop.hbase.client.TestTableDescriptorBuilder
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncMetaRegionLocatorFailFast
+[INFO] Running org.apache.hadoop.hbase.client.TestOperation
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 s - in org.apache.hadoop.hbase.client.TestOperation
+[INFO] Running org.apache.hadoop.hbase.client.TestSimpleRequestController
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.653 s - in org.apache.hadoop.hbase.client.TestSimpleRequestController
+[INFO] Running org.apache.hadoop.hbase.client.TestClientNoCluster
+[WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.207 s - in org.apache.hadoop.hbase.client.TestClientNoCluster
+[INFO] Running org.apache.hadoop.hbase.client.TestMutation
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 s - in org.apache.hadoop.hbase.client.TestMutation
+[INFO] Running org.apache.hadoop.hbase.exceptions.TestClientExceptionsUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s - in org.apache.hadoop.hbase.exceptions.TestClientExceptionsUtil
+[INFO] Running org.apache.hadoop.hbase.security.TestHBaseSaslRpcClient
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.809 s - in org.apache.hadoop.hbase.security.TestHBaseSaslRpcClient
+[INFO] Running org.apache.hadoop.hbase.security.TestEncryptionUtil
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.58 s - in org.apache.hadoop.hbase.security.TestEncryptionUtil
+[INFO] Running org.apache.hadoop.hbase.security.TestSaslUtil
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s - in org.apache.hadoop.hbase.security.TestSaslUtil
+[INFO] Running org.apache.hadoop.hbase.TestRegionLocations
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.24 s - in org.apache.hadoop.hbase.TestRegionLocations
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZNodePaths
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.333 s - in org.apache.hadoop.hbase.zookeeper.TestZNodePaths
+[INFO] Running org.apache.hadoop.hbase.TestHTableDescriptor
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.816 s - in org.apache.hadoop.hbase.TestHTableDescriptor
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationPeerConfig
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 s - in org.apache.hadoop.hbase.replication.TestReplicationPeerConfig
+[INFO] Running org.apache.hadoop.hbase.TestHColumnDescriptor
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.607 s - in org.apache.hadoop.hbase.TestHColumnDescriptor
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaSettingsFactory
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.369 s - in org.apache.hadoop.hbase.quotas.TestQuotaSettingsFactory
+[INFO] Running org.apache.hadoop.hbase.quotas.TestSpaceLimitSettings
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.51 s - in org.apache.hadoop.hbase.quotas.TestSpaceLimitSettings
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaGlobalsSettingsBypass
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 s - in org.apache.hadoop.hbase.quotas.TestQuotaGlobalsSettingsBypass
+[INFO] Running org.apache.hadoop.hbase.quotas.TestThrottleSettings
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.246 s - in org.apache.hadoop.hbase.quotas.TestThrottleSettings
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaFilter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 s - in org.apache.hadoop.hbase.quotas.TestQuotaFilter
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 214, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14:49 min
+[INFO] Finished at: 2025-05-13T14:19:18+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.21.0:test (default-test) on project hbase-client: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] ExecutionException The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was /bin/sh -c cd /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client && /usr/lib/jvm/java-11-openjdk-amd64/bin/java -enableassertions -Dhbase.build.id=2025-05-13T13:04:28Z -Xmx2800m -Djava.security.egd=file:/dev/./urandom -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djdk.net.URLClassPath.disableClassPathURLCheck=true -jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire/surefirebooter3747204641749899188.jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire 2025-05-13T14-04-34_965-jvmRun1 surefire15164342456509274313tmp surefire_4115380393713621828577tmp
+[ERROR] Process Exit Code: 0
+[ERROR] org.apache.maven.surefire.booter.SurefireBooterForkException: ExecutionException The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was /bin/sh -c cd /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client && /usr/lib/jvm/java-11-openjdk-amd64/bin/java -enableassertions -Dhbase.build.id=2025-05-13T13:04:28Z -Xmx2800m -Djava.security.egd=file:/dev/./urandom -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djdk.net.URLClassPath.disableClassPathURLCheck=true -jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire/surefirebooter3747204641749899188.jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire 2025-05-13T14-04-34_965-jvmRun1 surefire15164342456509274313tmp surefire_4115380393713621828577tmp
+[ERROR] Process Exit Code: 0
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.awaitResultsDone(ForkStarter.java:494)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.runSuitesForkPerTestSet(ForkStarter.java:441)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:293)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:245)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1149)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:978)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:854)
+[ERROR] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:137)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:370)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:351)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:215)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:171)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:163)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+[ERROR] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:56)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:299)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+[ERROR] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+[ERROR] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:963)
+[ERROR] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:296)
+[ERROR] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[ERROR] 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:282)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:225)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:406)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:347)
+[ERROR] Caused by: org.apache.maven.surefire.booter.SurefireBooterForkException: The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was /bin/sh -c cd /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client && /usr/lib/jvm/java-11-openjdk-amd64/bin/java -enableassertions -Dhbase.build.id=2025-05-13T13:04:28Z -Xmx2800m -Djava.security.egd=file:/dev/./urandom -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djdk.net.URLClassPath.disableClassPathURLCheck=true -jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire/surefirebooter3747204641749899188.jar /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-client/target/surefire 2025-05-13T14-04-34_965-jvmRun1 surefire15164342456509274313tmp surefire_4115380393713621828577tmp
+[ERROR] Process Exit Code: 0
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.fork(ForkStarter.java:671)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.fork(ForkStarter.java:533)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.access$600(ForkStarter.java:115)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter$2.call(ForkStarter.java:429)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter$2.call(ForkStarter.java:406)
+[ERROR] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[ERROR] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+[ERROR] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+[ERROR] 	at java.base/java.lang.Thread.run(Thread.java:829)
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

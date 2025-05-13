@@ -1,0 +1,159 @@
+From e25624f5703b0882b054124c162f2c0f5933d63c Mon Sep 17 00:00:00 2001
+From: Duo Zhang <zhangduo@apache.org>
+Date: Thu, 14 Feb 2019 18:02:44 +0800
+Subject: [PATCH] HBASE-21900 Infinite loop in AsyncMetaRegionLocator if we can
+ not get the location for meta
+
+---
+ .../hbase/client/AsyncMetaRegionLocator.java  |  1 +
+ .../hbase/zookeeper/ReadOnlyZKClient.java     | 11 +--
+ .../TestAsyncMetaRegionLocatorFailFast.java   | 67 +++++++++++++++++++
+ .../apache/hadoop/hbase/util/FutureUtils.java |  9 +++
+ 4 files changed, 80 insertions(+), 8 deletions(-)
+ create mode 100644 hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestAsyncMetaRegionLocatorFailFast.java
+
+diff --git a/hbase-client/src/main/java/org/apache/hadoop/hbase/client/AsyncMetaRegionLocator.java b/hbase-client/src/main/java/org/apache/hadoop/hbase/client/AsyncMetaRegionLocator.java
+index ce3a2ddd81..f5b3f92f65 100644
+--- a/hbase-client/src/main/java/org/apache/hadoop/hbase/client/AsyncMetaRegionLocator.java
++++ b/hbase-client/src/main/java/org/apache/hadoop/hbase/client/AsyncMetaRegionLocator.java
+@@ -92,6 +92,7 @@ class AsyncMetaRegionLocator {
+           metaRelocateFuture.set(null);
+           future.complete(locs);
+         });
++        return future;
+       } else {
+         CompletableFuture<RegionLocations> future = metaRelocateFuture.get();
+         if (future != null) {
+diff --git a/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ReadOnlyZKClient.java b/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ReadOnlyZKClient.java
+index 3b508707f2..9873e831a6 100644
+--- a/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ReadOnlyZKClient.java
++++ b/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ReadOnlyZKClient.java
+@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
+ import java.util.concurrent.atomic.AtomicBoolean;
+ import org.apache.hadoop.conf.Configuration;
+ import org.apache.hadoop.hbase.DoNotRetryIOException;
++import org.apache.hadoop.hbase.util.FutureUtils;
+ import org.apache.hadoop.hbase.util.Threads;
+ import org.apache.yetus.audience.InterfaceAudience;
+ import org.apache.zookeeper.KeeperException;
+@@ -252,15 +253,9 @@ public final class ReadOnlyZKClient implements Closeable {
+     }
+   }
+ 
+-  private static <T> CompletableFuture<T> failed(Throwable e) {
+-    CompletableFuture<T> future = new CompletableFuture<>();
+-    future.completeExceptionally(e);
+-    return future;
+-  }
+-
+   public CompletableFuture<byte[]> get(String path) {
+     if (closed.get()) {
+-      return failed(new DoNotRetryIOException("Client already closed"));
++      return FutureUtils.failedFuture(new DoNotRetryIOException("Client already closed"));
+     }
+     CompletableFuture<byte[]> future = new CompletableFuture<>();
+     tasks.add(new ZKTask<byte[]>(path, future, "get") {
+@@ -276,7 +271,7 @@ public final class ReadOnlyZKClient implements Closeable {
+ 
+   public CompletableFuture<Stat> exists(String path) {
+     if (closed.get()) {
+-      return failed(new DoNotRetryIOException("Client already closed"));
++      return FutureUtils.failedFuture(new DoNotRetryIOException("Client already closed"));
+     }
+     CompletableFuture<Stat> future = new CompletableFuture<>();
+     tasks.add(new ZKTask<Stat>(path, future, "exists") {
+diff --git a/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestAsyncMetaRegionLocatorFailFast.java b/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestAsyncMetaRegionLocatorFailFast.java
+new file mode 100644
+index 0000000000..f29c3bfcc8
+--- /dev/null
++++ b/hbase-client/src/test/java/org/apache/hadoop/hbase/client/TestAsyncMetaRegionLocatorFailFast.java
+@@ -0,0 +1,67 @@
++/**
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.apache.hadoop.hbase.client;
++
++import java.io.IOException;
++import java.util.concurrent.CompletableFuture;
++import org.apache.hadoop.conf.Configuration;
++import org.apache.hadoop.hbase.DoNotRetryIOException;
++import org.apache.hadoop.hbase.HBaseClassTestRule;
++import org.apache.hadoop.hbase.HBaseConfiguration;
++import org.apache.hadoop.hbase.RegionLocations;
++import org.apache.hadoop.hbase.testclassification.ClientTests;
++import org.apache.hadoop.hbase.testclassification.SmallTests;
++import org.apache.hadoop.hbase.util.FutureUtils;
++import org.junit.BeforeClass;
++import org.junit.ClassRule;
++import org.junit.Test;
++import org.junit.experimental.categories.Category;
++
++@Category({ ClientTests.class, SmallTests.class })
++public class TestAsyncMetaRegionLocatorFailFast {
++
++  @ClassRule
++  public static final HBaseClassTestRule CLASS_RULE =
++    HBaseClassTestRule.forClass(TestAsyncMetaRegionLocatorFailFast.class);
++
++  private static Configuration CONF = HBaseConfiguration.create();
++
++  private static AsyncMetaRegionLocator LOCATOR;
++
++  private static final class FaultyAsyncRegistry extends DoNothingAsyncRegistry {
++
++    public FaultyAsyncRegistry(Configuration conf) {
++      super(conf);
++    }
++
++    @Override
++    public CompletableFuture<RegionLocations> getMetaRegionLocation() {
++      return FutureUtils.failedFuture(new DoNotRetryRegionException("inject error"));
++    }
++  }
++
++  @BeforeClass
++  public static void setUp() {
++    LOCATOR = new AsyncMetaRegionLocator(new FaultyAsyncRegistry(CONF));
++  }
++
++  @Test(expected = DoNotRetryIOException.class)
++  public void test() throws IOException {
++    FutureUtils.get(LOCATOR.getRegionLocations(RegionInfo.DEFAULT_REPLICA_ID, false));
++  }
++}
+diff --git a/hbase-common/src/main/java/org/apache/hadoop/hbase/util/FutureUtils.java b/hbase-common/src/main/java/org/apache/hadoop/hbase/util/FutureUtils.java
+index 861dacbc32..6f0077c798 100644
+--- a/hbase-common/src/main/java/org/apache/hadoop/hbase/util/FutureUtils.java
++++ b/hbase-common/src/main/java/org/apache/hadoop/hbase/util/FutureUtils.java
+@@ -134,4 +134,13 @@ public final class FutureUtils {
+       throw new IOException(cause);
+     }
+   }
++
++  /**
++   * Returns a CompletableFuture that is already completed exceptionally with the given exception.
++   */
++  public static <T> CompletableFuture<T> failedFuture(Throwable e) {
++    CompletableFuture<T> future = new CompletableFuture<>();
++    future.completeExceptionally(e);
++    return future;
++  }
+ }
+\ No newline at end of file
+-- 
+2.17.1
+
