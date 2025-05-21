@@ -1,0 +1,216 @@
+rss:
+  '@version': '0.92'
+  channel:
+    build-info:
+      build-date: 22-06-2022
+      build-number: '820010'
+      version: 8.20.10
+    description: This file is an XML representation of an issue
+    item:
+      assignee:
+        '#text': Yulin Niu
+        '@username': niuyulin
+      attachments: null
+      comments:
+        comment:
+        - '#text': <p>Pushed to branch-2.2+. Thanks <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=niuyulin"
+            class="user-hover" rel="niuyulin">niuyulin</a> for contributing.</p>
+          '@author': zghaobac
+          '@created': Wed, 11 Mar 2020 03:01:22 +0000
+          '@id': '17056606'
+        - '#text': "<p>Results for branch master<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/1661/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #1661 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"red\">-1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/1661//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/1661//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/1661//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/1661//JDK11_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Wed, 11 Mar 2020 12:11:42 +0000
+          '@id': '17056941'
+        - '#text': "<p>Results for branch branch-2<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/2543/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #2543 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/2543//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/2543//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/2543//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk11 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/2543//JDK11_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk11 report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 source release artifact</font><br/>\n&#8211;\
+            \ See build output for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Wed, 11 Mar 2020 20:24:48 +0000
+          '@id': '17057358'
+        - '#text': "<p>Results for branch branch-2.2<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/812/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #812 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"red\">-1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/812//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/812//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/812//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 source release artifact</font><br/>\n&#8211; See build output\
+            \ for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Wed, 11 Mar 2020 20:58:20 +0000
+          '@id': '17057383'
+      component: Balancer
+      created: Tue, 10 Mar 2020 03:23:05 +0000
+      customfields:
+        customfield:
+        - '@id': customfield_12310310
+          '@key': com.atlassian.jira.toolkit:attachments
+          customfieldname: Attachment count
+          customfieldvalues:
+            customfieldvalue: '0.0'
+        - '@id': customfield_12314020
+          '@key': com.atlassian.jira.plugins.jira-development-integration-plugin:devsummary
+          customfieldname: Development
+          customfieldvalues: null
+        - '@id': customfield_12313422
+          '@key': com.atlassian.jirafisheyeplugin:jobcheckbox
+          customfieldname: Enable Automatic Patch Review
+          customfieldvalues:
+            customfieldvalue: 'false'
+        - '@id': customfield_12310420
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Global Rank
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+        - '@id': customfield_12312521
+          '@key': com.atlassian.jira.toolkit:LastCommentDate
+          customfieldname: Last public comment date
+          customfieldvalues: 5 years, 11 weeks ago
+        - '@id': customfield_12311820
+          '@key': com.pyxis.greenhopper.jira:gh-lexo-rank
+          customfieldname: Rank
+          customfieldvalues:
+            customfieldvalue: '0|z0ccvs:'
+        - '@id': customfield_12310920
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Rank (Obsolete)
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+      description: null
+      due: null
+      environment: null
+      fixVersion:
+      - 3.0.0-alpha-1
+      - 2.3.0
+      - 2.2.4
+      key:
+        '#text': HBASE-23953
+        '@id': '13290705'
+      labels: null
+      link: https://issues.apache.org/jira/browse/HBASE-23953
+      priority:
+        '#text': Major
+        '@iconUrl': https://issues.apache.org/jira/images/icons/priorities/major.svg
+        '@id': '3'
+      project:
+        '#text': HBase
+        '@id': '12310753'
+        '@key': HBASE
+      reporter:
+        '#text': Yulin Niu
+        '@username': niuyulin
+      resolution:
+        '#text': Fixed
+        '@id': '1'
+      resolved: Wed, 11 Mar 2020 03:01:22 +0000
+      status:
+        '#text': Resolved
+        '@description': A resolution has been taken, and it is awaiting verification
+          by reporter. From here issues are either reopened, or are closed.
+        '@iconUrl': https://issues.apache.org/jira/images/icons/statuses/resolved.png
+        '@id': '5'
+      statusCategory:
+        '@colorName': green
+        '@id': '3'
+        '@key': done
+      subtasks: null
+      summary: SimpleBalancer bug when second pass to fill up to min
+      title: '[HBASE-23953] SimpleBalancer bug when second pass to fill up to min'
+      type:
+        '#text': Bug
+        '@iconUrl': https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype
+        '@id': '1'
+      updated: Wed, 11 Mar 2020 20:58:20 +0000
+      version: 2.2.0
+      votes: '0'
+      watches: '2'
+    language: en-uk
+    link: https://issues.apache.org/jira
+    title: ASF JIRA

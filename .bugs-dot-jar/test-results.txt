@@ -1,0 +1,702 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.8
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 8
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 22.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------< org.apache.hbase:hbase-server >--------------------
+[INFO] Building Apache HBase - Server 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ hbase-server ---
+[INFO] Deleting /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-server ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:regex-property (create-license-file-path-property) @ hbase-server ---
+[INFO] No match to regex '\\' found in '/home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ hbase-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-jsr305) @ hbase-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-scala) @ hbase-server ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (default) @ hbase-server ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (jspcSource-packageInfo-source) @ hbase-server ---
+[INFO] Source directory: /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/generated-jamon added.
+[INFO] Source directory: /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/generated-sources/java added.
+[INFO] 
+[INFO] --- jamon-maven-plugin:2.4.2:translate (default) @ hbase-server ---
+[INFO] Translating 12 templates from /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/jamon to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/generated-jamon
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (generate) @ hbase-server ---
+[INFO] Executing tasks
+
+main:
+    [mkdir] Created dir: /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/hbase-webapps
+     [copy] Copying 24 files to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/hbase-webapps
+    [mkdir] Created dir: /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/hbase-webapps/master/WEB-INF
+    [mkdir] Created dir: /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/hbase-webapps/regionserver/WEB-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (banned-illegal-imports) @ hbase-server ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ hbase-server ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ hbase-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 26 resources
+[INFO] Copying 46 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (check-aggregate-license) @ hbase-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ hbase-server ---
+[INFO] Compiling 1069 source files to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/classes
+[WARNING] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java:[189,16] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] unknown enum constant javax.annotation.meta.When.UNKNOWN
+  reason: class file for javax.annotation.meta.When not found
+[WARNING] unknown enum constant javax.annotation.meta.When.ALWAYS
+[WARNING] unknown enum constant javax.annotation.meta.When.MAYBE
+[WARNING] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java:[689,25] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java:[689,7] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java: sun.misc.Signal is internal proprietary API and may be removed in a future release
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/RegionCoprocessorHost.java: Some input files use or override a deprecated API.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/RegionCoprocessorHost.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-server ---
+[INFO] Wrote classpath file '/home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/test-classes/mrapp-generated-classpath'.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ hbase-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to META-INF/
+[INFO] Copying 13 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ hbase-server ---
+[INFO] Compiling 1260 source files to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/test-classes
+[WARNING] unknown enum constant javax.annotation.meta.When.UNKNOWN
+  reason: class file for javax.annotation.meta.When not found
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestRegionServerNoMaster.java: Some input files use or override a deprecated API.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestRegionServerNoMaster.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/test/java/org/apache/hadoop/hbase/constraint/TestConstraint.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/src/test/java/org/apache/hadoop/hbase/constraint/TestConstraint.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- warbucks-maven-plugin:1.1.0:check (run-warbucks) @ hbase-server ---
+[INFO] Rule 0: Class Matches: 932
+[INFO] Rule 0: Class Failures: 0
+[INFO] Total class failures: 0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M4:test (default-test) @ hbase-server ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.hadoop.hbase.tool.coprocessor.CoprocessorValidatorTest
+[INFO] Running org.apache.hadoop.hbase.TestSize
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.45 s - in org.apache.hadoop.hbase.TestSize
+[INFO] Running org.apache.hadoop.hbase.filter.TestRegexComparator
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.109 s - in org.apache.hadoop.hbase.filter.TestRegexComparator
+[INFO] Running org.apache.hadoop.hbase.filter.TestPageFilter
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.693 s - in org.apache.hadoop.hbase.tool.coprocessor.CoprocessorValidatorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in org.apache.hadoop.hbase.filter.TestPageFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestColumnPaginationFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestComparatorSerialization
+[INFO] Running org.apache.hadoop.hbase.filter.TestColumnPrefixFilter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.619 s - in org.apache.hadoop.hbase.filter.TestColumnPaginationFilter
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.98 s - in org.apache.hadoop.hbase.filter.TestComparatorSerialization
+[INFO] Running org.apache.hadoop.hbase.filter.TestSingleColumnValueExcludeFilter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 s - in org.apache.hadoop.hbase.filter.TestSingleColumnValueExcludeFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestBitComparator
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.665 s - in org.apache.hadoop.hbase.filter.TestBitComparator
+[INFO] Running org.apache.hadoop.hbase.filter.TestNullComparator
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.288 s - in org.apache.hadoop.hbase.filter.TestColumnPrefixFilter
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in org.apache.hadoop.hbase.filter.TestNullComparator
+[INFO] Running org.apache.hadoop.hbase.filter.TestInclusiveStopFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestFuzzyRowFilter
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.572 s - in org.apache.hadoop.hbase.filter.TestInclusiveStopFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestSingleColumnValueFilter
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.55 s - in org.apache.hadoop.hbase.filter.TestFuzzyRowFilter
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.653 s - in org.apache.hadoop.hbase.filter.TestSingleColumnValueFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestInvocationRecordFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestFilterFromRegionSide
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.845 s - in org.apache.hadoop.hbase.filter.TestFilterFromRegionSide
+[INFO] Running org.apache.hadoop.hbase.filter.TestDependentColumnFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestBigDecimalComparator
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.758 s - in org.apache.hadoop.hbase.filter.TestInvocationRecordFilter
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.485 s - in org.apache.hadoop.hbase.filter.TestBigDecimalComparator
+[INFO] Running org.apache.hadoop.hbase.filter.TestFirstKeyValueMatchingQualifiersFilter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.24 s - in org.apache.hadoop.hbase.filter.TestFirstKeyValueMatchingQualifiersFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestPrefixFilter
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.46 s - in org.apache.hadoop.hbase.filter.TestPrefixFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestRandomRowFilter
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.609 s - in org.apache.hadoop.hbase.filter.TestDependentColumnFilter
+[INFO] Running org.apache.hadoop.hbase.filter.TestQualifierFilterWithEmptyQualifier
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.657 s - in org.apache.hadoop.hbase.filter.TestRandomRowFilter
+[INFO] Running org.apache.hadoop.hbase.TestFSTableDescriptorForceCreation
+[INFO] Running org.apache.hadoop.hbase.ipc.TestRpcMetrics
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.979 s - in org.apache.hadoop.hbase.TestFSTableDescriptorForceCreation
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.566 s - in org.apache.hadoop.hbase.filter.TestQualifierFilterWithEmptyQualifier
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.58 s - in org.apache.hadoop.hbase.ipc.TestRpcMetrics
+[INFO] Running org.apache.hadoop.hbase.ipc.TestBufferChain
+[INFO] Running org.apache.hadoop.hbase.ipc.TestRpcHandlerException
+[INFO] Running org.apache.hadoop.hbase.ipc.TestHBaseClient
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.731 s - in org.apache.hadoop.hbase.ipc.TestHBaseClient
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.948 s - in org.apache.hadoop.hbase.ipc.TestBufferChain
+[INFO] Running org.apache.hadoop.hbase.ipc.TestFifoRpcScheduler
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.68 s - in org.apache.hadoop.hbase.ipc.TestRpcHandlerException
+[INFO] Running org.apache.hadoop.hbase.ipc.TestRpcServerTraceLogging
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.684 s - in org.apache.hadoop.hbase.ipc.TestFifoRpcScheduler
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.33 s - in org.apache.hadoop.hbase.ipc.TestRpcServerTraceLogging
+[INFO] Running org.apache.hadoop.hbase.ipc.TestProtoBufRpc
+[INFO] Running org.apache.hadoop.hbase.ipc.TestCallRunner
+[INFO] Running org.apache.hadoop.hbase.TestIPv6NIOServerSocketChannel
+[INFO] Running org.apache.hadoop.hbase.TestSerialization
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.344 s - in org.apache.hadoop.hbase.TestIPv6NIOServerSocketChannel
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.195 s - in org.apache.hadoop.hbase.ipc.TestCallRunner
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.251 s - in org.apache.hadoop.hbase.ipc.TestProtoBufRpc
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.694 s - in org.apache.hadoop.hbase.TestSerialization
+[INFO] Running org.apache.hadoop.hbase.util.TestDefaultEnvironmentEdge
+[INFO] Running org.apache.hadoop.hbase.util.TestCompressionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in org.apache.hadoop.hbase.util.TestDefaultEnvironmentEdge
+[INFO] Running org.apache.hadoop.hbase.util.TestIdReadWriteLockStrongRef
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.209 s - in org.apache.hadoop.hbase.util.TestIdReadWriteLockStrongRef
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.287 s - in org.apache.hadoop.hbase.util.TestCompressionTest
+[INFO] Running org.apache.hadoop.hbase.util.TestByteBuffUtils
+[INFO] Running org.apache.hadoop.hbase.util.TestEncryptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.302 s - in org.apache.hadoop.hbase.util.TestByteBuffUtils
+[INFO] Running org.apache.hadoop.hbase.util.TestHBaseFsckComparator
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.689 s - in org.apache.hadoop.hbase.util.TestHBaseFsckComparator
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.924 s - in org.apache.hadoop.hbase.util.TestEncryptionTest
+[INFO] Running org.apache.hadoop.hbase.util.TestConfigurationUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestFSVisitor
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.167 s - in org.apache.hadoop.hbase.util.TestConfigurationUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestStealJobQueue
+[INFO] Running org.apache.hadoop.hbase.util.TestBloomFilterChunk
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.927 s - in org.apache.hadoop.hbase.util.TestStealJobQueue
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.539 s - in org.apache.hadoop.hbase.util.TestFSVisitor
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.548 s - in org.apache.hadoop.hbase.util.TestBloomFilterChunk
+[INFO] Running org.apache.hadoop.hbase.util.TestJSONMetricUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestIncrementingEnvironmentEdge
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s - in org.apache.hadoop.hbase.util.TestIncrementingEnvironmentEdge
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.638 s - in org.apache.hadoop.hbase.util.TestJSONMetricUtil
+[INFO] Running org.apache.hadoop.hbase.util.compaction.TestMajorCompactionTTLRequest
+[INFO] Running org.apache.hadoop.hbase.util.compaction.TestMajorCompactionRequest
+[INFO] Running org.apache.hadoop.hbase.util.TestSortedList
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.682 s - in org.apache.hadoop.hbase.util.compaction.TestMajorCompactionTTLRequest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.458 s - in org.apache.hadoop.hbase.util.TestSortedList
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.474 s - in org.apache.hadoop.hbase.util.compaction.TestMajorCompactionRequest
+[INFO] Running org.apache.hadoop.hbase.util.TestHFileArchiveUtil
+[INFO] Running org.apache.hadoop.hbase.util.TestRootPath
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.236 s - in org.apache.hadoop.hbase.util.TestRootPath
+[INFO] Running org.apache.hadoop.hbase.util.TestRegionSplitCalculator
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.367 s - in org.apache.hadoop.hbase.util.TestHFileArchiveUtil
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.162 s - in org.apache.hadoop.hbase.util.TestRegionSplitCalculator
+[INFO] Running org.apache.hadoop.hbase.util.TestLossyCounting
+[INFO] Running org.apache.hadoop.hbase.util.TestBoundedPriorityBlockingQueue
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.183 s - in org.apache.hadoop.hbase.util.TestLossyCounting
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.559 s - in org.apache.hadoop.hbase.util.TestBoundedPriorityBlockingQueue
+[INFO] Running org.apache.hadoop.hbase.TestHRegionLocation
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.513 s - in org.apache.hadoop.hbase.TestHRegionLocation
+[INFO] Running org.apache.hadoop.hbase.io.TestMetricsIO
+[INFO] Running org.apache.hadoop.hbase.io.TestHFileLink
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.511 s - in org.apache.hadoop.hbase.io.TestHFileLink
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.091 s - in org.apache.hadoop.hbase.io.TestMetricsIO
+[INFO] Running org.apache.hadoop.hbase.io.TestHalfStoreFileReader
+[INFO] Running org.apache.hadoop.hbase.io.asyncfs.TestSendBufSizePredictor
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.33 s - in org.apache.hadoop.hbase.io.asyncfs.TestSendBufSizePredictor
+[INFO] Running org.apache.hadoop.hbase.io.asyncfs.TestLocalAsyncOutput
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.201 s - in org.apache.hadoop.hbase.io.TestHalfStoreFileReader
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.641 s - in org.apache.hadoop.hbase.io.asyncfs.TestLocalAsyncOutput
+[INFO] Running org.apache.hadoop.hbase.io.encoding.TestSeekToBlockWithEncoders
+[INFO] Running org.apache.hadoop.hbase.io.encoding.TestDataBlockEncoding
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.284 s - in org.apache.hadoop.hbase.io.encoding.TestDataBlockEncoding
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.948 s - in org.apache.hadoop.hbase.io.encoding.TestSeekToBlockWithEncoders
+[INFO] Running org.apache.hadoop.hbase.io.encoding.TestSeekBeforeWithReverseScan
+[INFO] Running org.apache.hadoop.hbase.io.TestImmutableBytesWritable
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.479 s - in org.apache.hadoop.hbase.io.TestImmutableBytesWritable
+[INFO] Running org.apache.hadoop.hbase.io.TestHeapSize
+[INFO] Running org.apache.hadoop.hbase.io.TestByteBufferOutputStream
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.895 s - in org.apache.hadoop.hbase.io.TestHeapSize
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.23 s - in org.apache.hadoop.hbase.io.TestByteBufferOutputStream
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestCachedBlockQueue
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s - in org.apache.hadoop.hbase.io.hfile.TestCachedBlockQueue
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.775 s - in org.apache.hadoop.hbase.io.encoding.TestSeekBeforeWithReverseScan
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestScannerFromBucketCache
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestChecksum
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestSeekTo
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestReseekTo
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.936 s - in org.apache.hadoop.hbase.io.hfile.TestChecksum
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.827 s - in org.apache.hadoop.hbase.io.hfile.TestReseekTo
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFileSeek
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.384 s - in org.apache.hadoop.hbase.io.hfile.TestSeekTo
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.178 s - in org.apache.hadoop.hbase.io.hfile.TestScannerFromBucketCache
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestLruBlockCache
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.892 s - in org.apache.hadoop.hbase.io.hfile.TestHFileSeek
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestScannerSelectionUsingKeyRange
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.602 s - in org.apache.hadoop.hbase.io.hfile.TestLruBlockCache
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestBlockCacheReporting
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestTinyLfuBlockCache
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.84 s - in org.apache.hadoop.hbase.io.hfile.TestTinyLfuBlockCache
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.392 s - in org.apache.hadoop.hbase.io.hfile.TestBlockCacheReporting
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.486 s - in org.apache.hadoop.hbase.io.hfile.TestScannerSelectionUsingKeyRange
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestLruCachedBlock
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.191 s - in org.apache.hadoop.hbase.io.hfile.TestLruCachedBlock
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFilePrettyPrinter
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFileEncryption
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestByteBufferIOEngine
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.973 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestByteBufferIOEngine
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.286 s - in org.apache.hadoop.hbase.io.hfile.TestHFilePrettyPrinter
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestExclusiveMemoryMmapEngine
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.531 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestExclusiveMemoryMmapEngine
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestBucketCacheRefCnt
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestFileIOEngine
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestVerifyBucketCacheFile
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.924 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestFileIOEngine
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.909 s - in org.apache.hadoop.hbase.io.hfile.TestHFileEncryption
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.322 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestBucketCacheRefCnt
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestRAMCache
+[INFO] Running org.apache.hadoop.hbase.io.hfile.bucket.TestBucketWriterThread
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.79 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestRAMCache
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFileInlineToRootChunkConversion
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.159 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestVerifyBucketCacheFile
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.023 s - in org.apache.hadoop.hbase.io.hfile.bucket.TestBucketWriterThread
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.175 s - in org.apache.hadoop.hbase.io.hfile.TestHFileInlineToRootChunkConversion
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFileWriterV3
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFileReaderImpl
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestCombinedBlockCache
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.406 s - in org.apache.hadoop.hbase.io.hfile.TestHFileReaderImpl
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.463 s - in org.apache.hadoop.hbase.io.hfile.TestCombinedBlockCache
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.633 s - in org.apache.hadoop.hbase.io.hfile.TestHFileWriterV3
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestLazyDataBlockDecompression
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestFixedFileTrailer
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestBlockIOUtils
+[INFO] Running org.apache.hadoop.hbase.io.hfile.TestHFile
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.186 s - in org.apache.hadoop.hbase.io.hfile.TestLazyDataBlockDecompression
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.142 s - in org.apache.hadoop.hbase.io.hfile.TestBlockIOUtils
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.743 s - in org.apache.hadoop.hbase.io.hfile.TestFixedFileTrailer
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.452 s - in org.apache.hadoop.hbase.io.hfile.TestHFile
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestReadOnlyConfiguration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.289 s - in org.apache.hadoop.hbase.coprocessor.TestReadOnlyConfiguration
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestCoprocessorHost
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.805 s - in org.apache.hadoop.hbase.coprocessor.TestCoprocessorHost
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestRegionCoprocessorHost
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestRegionObserverPreFlushAndPreCompact
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestCoreRegionServerCoprocessor
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.375 s - in org.apache.hadoop.hbase.coprocessor.TestCoreRegionServerCoprocessor
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.728 s - in org.apache.hadoop.hbase.coprocessor.TestRegionCoprocessorHost
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.082 s - in org.apache.hadoop.hbase.coprocessor.TestRegionObserverPreFlushAndPreCompact
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestCoreRegionCoprocessor
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestCoprocessorConfiguration
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestRegionObserverStacking
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.143 s - in org.apache.hadoop.hbase.coprocessor.TestCoreRegionCoprocessor
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.785 s - in org.apache.hadoop.hbase.coprocessor.TestCoprocessorConfiguration
+[INFO] Running org.apache.hadoop.hbase.coprocessor.TestCoreMasterCoprocessor
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.986 s - in org.apache.hadoop.hbase.coprocessor.TestRegionObserverStacking
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.057 s - in org.apache.hadoop.hbase.coprocessor.TestCoreMasterCoprocessor
+[INFO] Running org.apache.hadoop.hbase.master.webapp.TestMetaBrowserNoCluster
+[INFO] Running org.apache.hadoop.hbase.master.TestMasterCoprocessorServices
+[INFO] Running org.apache.hadoop.hbase.master.TestClusterStatusPublisher
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.532 s - in org.apache.hadoop.hbase.master.TestClusterStatusPublisher
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.276 s - in org.apache.hadoop.hbase.master.webapp.TestMetaBrowserNoCluster
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.723 s - in org.apache.hadoop.hbase.master.TestMasterCoprocessorServices
+[INFO] Running org.apache.hadoop.hbase.master.TestHMasterCommandLine
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.471 s - in org.apache.hadoop.hbase.master.TestHMasterCommandLine
+[INFO] Running org.apache.hadoop.hbase.master.TestMasterQosFunction
+[INFO] Running org.apache.hadoop.hbase.master.TestRegionsRecoveryChore
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.534 s - in org.apache.hadoop.hbase.master.TestMasterQosFunction
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.283 s - in org.apache.hadoop.hbase.master.TestRegionsRecoveryChore
+[INFO] Running org.apache.hadoop.hbase.master.balancer.TestDefaultLoadBalancer
+[ERROR] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.596 s <<< FAILURE! - in org.apache.hadoop.hbase.master.balancer.TestDefaultLoadBalancer
+[ERROR] org.apache.hadoop.hbase.master.balancer.TestDefaultLoadBalancer.testBalanceClusterOverallStrictly  Time elapsed: 0.082 s  <<< FAILURE!
+java.lang.AssertionError: expected:<6> but was:<5>
+	at org.apache.hadoop.hbase.master.balancer.TestDefaultLoadBalancer.testBalanceClusterOverallStrictly(TestDefaultLoadBalancer.java:235)
+
+[INFO] Running org.apache.hadoop.hbase.master.balancer.TestServerAndLoad
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 s - in org.apache.hadoop.hbase.master.balancer.TestServerAndLoad
+[INFO] Running org.apache.hadoop.hbase.master.normalizer.TestSimpleRegionNormalizer
+[INFO] Running org.apache.hadoop.hbase.master.normalizer.TestMergeNormalizer
+[INFO] Running org.apache.hadoop.hbase.master.cleaner.TestSnapshotCleanerChore
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.085 s - in org.apache.hadoop.hbase.master.cleaner.TestSnapshotCleanerChore
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.176 s - in org.apache.hadoop.hbase.master.normalizer.TestMergeNormalizer
+[INFO] Running org.apache.hadoop.hbase.master.cleaner.TestCleanerChore
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.825 s - in org.apache.hadoop.hbase.master.normalizer.TestSimpleRegionNormalizer
+[INFO] Running org.apache.hadoop.hbase.master.cleaner.TestReplicationHFileCleaner
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.389 s - in org.apache.hadoop.hbase.master.cleaner.TestReplicationHFileCleaner
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.278 s - in org.apache.hadoop.hbase.master.cleaner.TestCleanerChore
+[INFO] Running org.apache.hadoop.hbase.master.procedure.TestSchedulerQueueDeadLock
+[INFO] Running org.apache.hadoop.hbase.master.procedure.TestMasterProcedureScheduler
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.424 s - in org.apache.hadoop.hbase.master.procedure.TestMasterProcedureScheduler
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.238 s - in org.apache.hadoop.hbase.master.procedure.TestSchedulerQueueDeadLock
+[INFO] Running org.apache.hadoop.hbase.master.snapshot.TestSnapshotManager
+[INFO] Running org.apache.hadoop.hbase.master.TestClockSkewDetection
+[INFO] Running org.apache.hadoop.hbase.master.snapshot.TestSnapshotHFileCleaner
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.607 s - in org.apache.hadoop.hbase.master.TestClockSkewDetection
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.565 s - in org.apache.hadoop.hbase.master.snapshot.TestSnapshotHFileCleaner
+[INFO] Running org.apache.hadoop.hbase.master.TestMetaFixerNoCluster
+[INFO] Running org.apache.hadoop.hbase.master.TestRegionPlan
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.533 s - in org.apache.hadoop.hbase.master.TestMetaFixerNoCluster
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.624 s - in org.apache.hadoop.hbase.master.snapshot.TestSnapshotManager
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 s - in org.apache.hadoop.hbase.master.TestRegionPlan
+[INFO] Running org.apache.hadoop.hbase.master.replication.TestSyncReplicationReplayWALManager
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.425 s - in org.apache.hadoop.hbase.master.replication.TestSyncReplicationReplayWALManager
+[INFO] Running org.apache.hadoop.hbase.master.TestRegionState
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.362 s - in org.apache.hadoop.hbase.master.TestRegionState
+[INFO] Running org.apache.hadoop.hbase.monitoring.TestMemoryBoundedLogMessageBuffer
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in org.apache.hadoop.hbase.monitoring.TestMemoryBoundedLogMessageBuffer
+[INFO] Running org.apache.hadoop.hbase.monitoring.TestTaskMonitor
+[INFO] Running org.apache.hadoop.hbase.client.TestResult
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.797 s - in org.apache.hadoop.hbase.client.TestResult
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.873 s - in org.apache.hadoop.hbase.monitoring.TestTaskMonitor
+[INFO] Running org.apache.hadoop.hbase.client.TestCompleteResultScanResultCache
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.44 s - in org.apache.hadoop.hbase.client.TestCompleteResultScanResultCache
+[INFO] Running org.apache.hadoop.hbase.client.TestAllowPartialScanResultCache
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.247 s - in org.apache.hadoop.hbase.client.TestAllowPartialScanResultCache
+[INFO] Running org.apache.hadoop.hbase.client.TestIntraRowPagination
+[INFO] Running org.apache.hadoop.hbase.client.TestAsyncAccessControlAdminApi
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.771 s - in org.apache.hadoop.hbase.client.TestIntraRowPagination
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.727 s - in org.apache.hadoop.hbase.client.TestAsyncAccessControlAdminApi
+[INFO] Running org.apache.hadoop.hbase.client.TestMultiActionMetricsFromClient
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.384 s - in org.apache.hadoop.hbase.client.TestMultiActionMetricsFromClient
+[INFO] Running org.apache.hadoop.hbase.client.TestBatchScanResultCache
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 s - in org.apache.hadoop.hbase.client.TestBatchScanResultCache
+[INFO] Running org.apache.hadoop.hbase.client.TestPutDeleteEtcCellIteration
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.729 s - in org.apache.hadoop.hbase.client.TestPutDeleteEtcCellIteration
+[INFO] Running org.apache.hadoop.hbase.client.TestMetaRegionLocationCache
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.488 s - in org.apache.hadoop.hbase.client.TestMetaRegionLocationCache
+[INFO] Running org.apache.hadoop.hbase.client.locking.TestEntityLocks
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.233 s - in org.apache.hadoop.hbase.client.locking.TestEntityLocks
+[INFO] Running org.apache.hadoop.hbase.client.TestConnectionUtils
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s - in org.apache.hadoop.hbase.client.TestConnectionUtils
+[INFO] Running org.apache.hadoop.hbase.constraint.TestConstraints
+[INFO] Running org.apache.hadoop.hbase.errorhandling.TestForeignExceptionDispatcher
+[INFO] Running org.apache.hadoop.hbase.errorhandling.TestTimeoutExceptionInjector
+[INFO] Running org.apache.hadoop.hbase.errorhandling.TestForeignExceptionSerialization
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.412 s - in org.apache.hadoop.hbase.constraint.TestConstraints
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.57 s - in org.apache.hadoop.hbase.errorhandling.TestForeignExceptionDispatcher
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 s - in org.apache.hadoop.hbase.errorhandling.TestForeignExceptionSerialization
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.304 s - in org.apache.hadoop.hbase.errorhandling.TestTimeoutExceptionInjector
+[INFO] Running org.apache.hadoop.hbase.security.provider.TestSaslServerAuthenticationProviders
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.299 s - in org.apache.hadoop.hbase.security.provider.TestSaslServerAuthenticationProviders
+[INFO] Running org.apache.hadoop.hbase.security.token.TestZKSecretWatcherRefreshKeys
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.614 s - in org.apache.hadoop.hbase.security.token.TestZKSecretWatcherRefreshKeys
+[INFO] Running org.apache.hadoop.hbase.security.token.TestFsDelegationToken
+[INFO] Running org.apache.hadoop.hbase.security.token.TestAuthenticationKey
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.45 s - in org.apache.hadoop.hbase.security.token.TestAuthenticationKey
+[INFO] Running org.apache.hadoop.hbase.security.TestUser
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.983 s - in org.apache.hadoop.hbase.security.token.TestFsDelegationToken
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.303 s - in org.apache.hadoop.hbase.security.TestUser
+[INFO] Running org.apache.hadoop.hbase.security.TestUsersOperationsWithSecureHadoop
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.865 s - in org.apache.hadoop.hbase.security.TestUsersOperationsWithSecureHadoop
+[INFO] Running org.apache.hadoop.hbase.security.visibility.TestExpressionParser
+[INFO] Running org.apache.hadoop.hbase.security.visibility.TestExpressionExpander
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.214 s - in org.apache.hadoop.hbase.security.visibility.TestExpressionExpander
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.498 s - in org.apache.hadoop.hbase.security.visibility.TestExpressionParser
+[INFO] Running org.apache.hadoop.hbase.security.access.TestPermissionBuilder
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.439 s - in org.apache.hadoop.hbase.security.access.TestPermissionBuilder
+[INFO] Running org.apache.hadoop.hbase.protobuf.TestProtobufUtil
+[INFO] Running org.apache.hadoop.hbase.protobuf.TestReplicationProtobuf
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.327 s - in org.apache.hadoop.hbase.protobuf.TestReplicationProtobuf
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.625 s - in org.apache.hadoop.hbase.protobuf.TestProtobufUtil
+[INFO] Running org.apache.hadoop.hbase.mob.TestMobFileCache
+[INFO] Running org.apache.hadoop.hbase.mob.TestMobFileName
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.42 s - in org.apache.hadoop.hbase.mob.TestMobFileName
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.661 s - in org.apache.hadoop.hbase.mob.TestMobFileCache
+[INFO] Running org.apache.hadoop.hbase.mob.TestMobFile
+[INFO] Running org.apache.hadoop.hbase.security.access.TestUnloadAccessController
+[INFO] Running org.apache.hadoop.hbase.mob.TestCachedMobFile
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.356 s - in org.apache.hadoop.hbase.mob.TestMobFile
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.742 s - in org.apache.hadoop.hbase.security.access.TestUnloadAccessController
+[INFO] Running org.apache.hadoop.hbase.mob.TestMobFileLink
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.577 s - in org.apache.hadoop.hbase.mob.TestCachedMobFile
+[INFO] Running org.apache.hadoop.hbase.executor.TestExecutorService
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.021 s - in org.apache.hadoop.hbase.mob.TestMobFileLink
+[INFO] Running org.apache.hadoop.hbase.procedure.TestProcedureDescriber
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.681 s - in org.apache.hadoop.hbase.procedure.TestProcedureDescriber
+[INFO] Running org.apache.hadoop.hbase.procedure.TestProcedureCoordinator
+[INFO] Running org.apache.hadoop.hbase.procedure.TestProcedureMember
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.796 s - in org.apache.hadoop.hbase.procedure.TestProcedureCoordinator
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.23 s - in org.apache.hadoop.hbase.executor.TestExecutorService
+[INFO] Running org.apache.hadoop.hbase.procedure.TestProcedure
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.098 s - in org.apache.hadoop.hbase.procedure.TestProcedureMember
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.855 s - in org.apache.hadoop.hbase.procedure.TestProcedure
+[INFO] Running org.apache.hadoop.hbase.TestNodeHealthCheckChore
+[INFO] Running org.apache.hadoop.hbase.snapshot.TestSnapshotDescriptionUtils
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.05 s - in org.apache.hadoop.hbase.snapshot.TestSnapshotDescriptionUtils
+[INFO] Running org.apache.hadoop.hbase.TestServerMetrics
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.475 s - in org.apache.hadoop.hbase.TestServerMetrics
+[INFO] Running org.apache.hadoop.hbase.conf.TestConfigurationManager
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.38 s - in org.apache.hadoop.hbase.conf.TestConfigurationManager
+[INFO] Running org.apache.hadoop.hbase.favored.TestStartcodeAgnosticServerName
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 s - in org.apache.hadoop.hbase.favored.TestStartcodeAgnosticServerName
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.035 s - in org.apache.hadoop.hbase.TestNodeHealthCheckChore
+[INFO] Running org.apache.hadoop.hbase.wal.TestReadWriteSeqIdFiles
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.249 s - in org.apache.hadoop.hbase.wal.TestReadWriteSeqIdFiles
+[INFO] Running org.apache.hadoop.hbase.wal.TestRaceBetweenGetWALAndGetWALs
+[INFO] Running org.apache.hadoop.hbase.wal.TestWALMethods
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.813 s - in org.apache.hadoop.hbase.wal.TestRaceBetweenGetWALAndGetWALs
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.061 s - in org.apache.hadoop.hbase.wal.TestWALMethods
+[INFO] Running org.apache.hadoop.hbase.wal.TestWALReaderOnSecureWAL
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.874 s - in org.apache.hadoop.hbase.wal.TestWALReaderOnSecureWAL
+[INFO] Running org.apache.hadoop.hbase.TestHDFSBlocksDistribution
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in org.apache.hadoop.hbase.TestHDFSBlocksDistribution
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationWALEntryFilters
+[INFO] Running org.apache.hadoop.hbase.replication.master.TestTableCFsUpdater
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 s - in org.apache.hadoop.hbase.replication.master.TestTableCFsUpdater
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.891 s - in org.apache.hadoop.hbase.replication.TestReplicationWALEntryFilters
+[INFO] Running org.apache.hadoop.hbase.replication.regionserver.TestDumpReplicationQueues
+[INFO] Running org.apache.hadoop.hbase.replication.regionserver.TestReplicationThrottler
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 s - in org.apache.hadoop.hbase.replication.regionserver.TestReplicationThrottler
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.225 s - in org.apache.hadoop.hbase.replication.regionserver.TestDumpReplicationQueues
+[INFO] Running org.apache.hadoop.hbase.replication.regionserver.TestReplicationSinkManager
+[INFO] Running org.apache.hadoop.hbase.replication.regionserver.TestWALEntrySinkFilter
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.672 s - in org.apache.hadoop.hbase.replication.regionserver.TestReplicationSinkManager
+[INFO] Running org.apache.hadoop.hbase.TestCheckTestClasses
+[INFO] Running org.apache.hadoop.hbase.TestExecutorStatusChore
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.523 s - in org.apache.hadoop.hbase.replication.regionserver.TestWALEntrySinkFilter
+[INFO] Running org.apache.hadoop.hbase.TestServerName
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.373 s - in org.apache.hadoop.hbase.TestExecutorStatusChore
+[WARNING] Tests run: 9, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.673 s - in org.apache.hadoop.hbase.TestServerName
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.083 s - in org.apache.hadoop.hbase.TestCheckTestClasses
+[INFO] Running org.apache.hadoop.hbase.quotas.TestTablesWithQuotas
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaObserverChore
+[INFO] Running org.apache.hadoop.hbase.quotas.TestMasterQuotaManager
+[INFO] Running org.apache.hadoop.hbase.quotas.TestFileSystemUtilizationChore
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.851 s - in org.apache.hadoop.hbase.quotas.TestQuotaObserverChore
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.244 s - in org.apache.hadoop.hbase.quotas.TestMasterQuotaManager
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.489 s - in org.apache.hadoop.hbase.quotas.TestTablesWithQuotas
+[INFO] Running org.apache.hadoop.hbase.quotas.TestSpaceQuotaViolationPolicyRefresherChore
+[INFO] Running org.apache.hadoop.hbase.quotas.TestRegionSizeReportingChore
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.174 s - in org.apache.hadoop.hbase.quotas.TestFileSystemUtilizationChore
+[INFO] Running org.apache.hadoop.hbase.quotas.TestQuotaState
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.575 s - in org.apache.hadoop.hbase.quotas.TestRegionSizeReportingChore
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.013 s - in org.apache.hadoop.hbase.quotas.TestSpaceQuotaViolationPolicyRefresherChore
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.332 s - in org.apache.hadoop.hbase.quotas.TestQuotaState
+[INFO] Running org.apache.hadoop.hbase.quotas.TestTableQuotaViolationStore
+[INFO] Running org.apache.hadoop.hbase.quotas.TestGlobalQuotaSettingsImpl
+[INFO] Running org.apache.hadoop.hbase.quotas.TestNamespaceQuotaViolationStore
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.635 s - in org.apache.hadoop.hbase.quotas.TestGlobalQuotaSettingsImpl
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.25 s - in org.apache.hadoop.hbase.quotas.TestTableQuotaViolationStore
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.13 s - in org.apache.hadoop.hbase.quotas.TestNamespaceQuotaViolationStore
+[INFO] Running org.apache.hadoop.hbase.quotas.TestRegionServerSpaceQuotaManager
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.048 s - in org.apache.hadoop.hbase.quotas.TestRegionServerSpaceQuotaManager
+[INFO] Running org.apache.hadoop.hbase.quotas.TestMasterQuotasObserverWithMocks
+[INFO] Running org.apache.hadoop.hbase.quotas.TestRegionSizeImpl
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 s - in org.apache.hadoop.hbase.quotas.TestRegionSizeImpl
+[INFO] Running org.apache.hadoop.hbase.quotas.TestTableSpaceQuotaViolationNotifier
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.729 s - in org.apache.hadoop.hbase.quotas.TestMasterQuotasObserverWithMocks
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.777 s - in org.apache.hadoop.hbase.quotas.TestTableSpaceQuotaViolationNotifier
+[INFO] Running org.apache.hadoop.hbase.quotas.TestRateLimiter
+[INFO] Running org.apache.hadoop.hbase.quotas.policies.TestBulkLoadCheckingViolationPolicyEnforcement
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.041 s - in org.apache.hadoop.hbase.quotas.TestRateLimiter
+[INFO] Running org.apache.hadoop.hbase.quotas.policies.TestNoWritesCompactionsViolationPolicyEnforcement
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 s - in org.apache.hadoop.hbase.quotas.policies.TestNoWritesCompactionsViolationPolicyEnforcement
+[INFO] Running org.apache.hadoop.hbase.quotas.policies.TestNoWritesViolationPolicyEnforcement
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.599 s - in org.apache.hadoop.hbase.quotas.policies.TestBulkLoadCheckingViolationPolicyEnforcement
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.361 s - in org.apache.hadoop.hbase.quotas.policies.TestNoWritesViolationPolicyEnforcement
+[INFO] Running org.apache.hadoop.hbase.quotas.policies.TestNoInsertsViolationPolicyEnforcement
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in org.apache.hadoop.hbase.quotas.policies.TestNoInsertsViolationPolicyEnforcement
+[INFO] Running org.apache.hadoop.hbase.quotas.policies.TestDisableTableViolationPolicyEnforcement
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.286 s - in org.apache.hadoop.hbase.quotas.policies.TestDisableTableViolationPolicyEnforcement
+[INFO] Running org.apache.hadoop.hbase.quotas.TestRegionSizeStoreImpl
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s - in org.apache.hadoop.hbase.quotas.TestRegionSizeStoreImpl
+[INFO] Running org.apache.hadoop.hbase.quotas.TestActivePolicyEnforcement
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.589 s - in org.apache.hadoop.hbase.quotas.TestActivePolicyEnforcement
+[INFO] Running org.apache.hadoop.hbase.quotas.TestSpaceQuotaOnNonExistingTables
+[INFO] Running org.apache.hadoop.hbase.codec.TestCellMessageCodec
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.463 s - in org.apache.hadoop.hbase.codec.TestCellMessageCodec
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestBlocksScanned
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.508 s - in org.apache.hadoop.hbase.quotas.TestSpaceQuotaOnNonExistingTables
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMemstoreLABWithoutPool
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.055 s - in org.apache.hadoop.hbase.regionserver.TestMemstoreLABWithoutPool
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestResettingCounters
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.229 s - in org.apache.hadoop.hbase.regionserver.TestBlocksScanned
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.186 s - in org.apache.hadoop.hbase.regionserver.TestResettingCounters
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestFailedAppendAndSync
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestStripeStoreEngine
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestStoreScannerClosure
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.981 s - in org.apache.hadoop.hbase.regionserver.TestStoreScannerClosure
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.028 s - in org.apache.hadoop.hbase.regionserver.TestStripeStoreEngine
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.276 s - in org.apache.hadoop.hbase.regionserver.TestFailedAppendAndSync
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestCellSkipListSet
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.479 s - in org.apache.hadoop.hbase.regionserver.TestCellSkipListSet
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMinorCompaction
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMetricsRegionServer
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestCellFlatSet
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.461 s - in org.apache.hadoop.hbase.regionserver.TestCellFlatSet
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestScanWithBloomError
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.649 s - in org.apache.hadoop.hbase.regionserver.TestMetricsRegionServer
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.24 s - in org.apache.hadoop.hbase.regionserver.TestMinorCompaction
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestServerNonceManager
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.356 s - in org.apache.hadoop.hbase.regionserver.TestScanWithBloomError
+[INFO] Running org.apache.hadoop.hbase.regionserver.compactions.TestStripeCompactor
+[INFO] Running org.apache.hadoop.hbase.regionserver.compactions.TestOffPeakHours
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.348 s - in org.apache.hadoop.hbase.regionserver.compactions.TestOffPeakHours
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.25 s - in org.apache.hadoop.hbase.regionserver.TestServerNonceManager
+[INFO] Running org.apache.hadoop.hbase.regionserver.compactions.TestDateTieredCompactor
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.357 s - in org.apache.hadoop.hbase.regionserver.compactions.TestStripeCompactor
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.355 s - in org.apache.hadoop.hbase.regionserver.compactions.TestDateTieredCompactor
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestBulkLoad
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestBlocksRead
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestStoreFileScannerWithTagCompression
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.179 s - in org.apache.hadoop.hbase.regionserver.TestStoreFileScannerWithTagCompression
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestExplicitColumnTracker
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.145 s - in org.apache.hadoop.hbase.regionserver.TestBulkLoad
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.184 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestExplicitColumnTracker
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestScanWildcardColumnTracker
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.366 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestScanWildcardColumnTracker
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestNewVersionBehaviorTracker
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.662 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestNewVersionBehaviorTracker
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestScanDeleteTracker
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.4 s - in org.apache.hadoop.hbase.regionserver.TestBlocksRead
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestCompactionScanQueryMatcher
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.684 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestScanDeleteTracker
+[INFO] Running org.apache.hadoop.hbase.regionserver.querymatcher.TestUserScanQueryMatcher
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.906 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestCompactionScanQueryMatcher
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.781 s - in org.apache.hadoop.hbase.regionserver.querymatcher.TestUserScanQueryMatcher
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestStoreFileInfo
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRegionInfoBuilder
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.977 s - in org.apache.hadoop.hbase.regionserver.TestStoreFileInfo
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestFlushRegionEntry
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMetricsHeapMemoryManager
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestObservedExceptionsInBatch
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 s - in org.apache.hadoop.hbase.regionserver.TestObservedExceptionsInBatch
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.671 s - in org.apache.hadoop.hbase.regionserver.TestRegionInfoBuilder
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.013 s - in org.apache.hadoop.hbase.regionserver.TestMetricsHeapMemoryManager
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.372 s - in org.apache.hadoop.hbase.regionserver.TestFlushRegionEntry
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMemStoreSegmentsIterator
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.482 s - in org.apache.hadoop.hbase.regionserver.TestMemStoreSegmentsIterator
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestKeyValueScanFixture
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.23 s - in org.apache.hadoop.hbase.regionserver.TestKeyValueScanFixture
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestDateTieredCompactionPolicyOverflow
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestSimpleTimeRangeTracker
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.885 s - in org.apache.hadoop.hbase.regionserver.TestSimpleTimeRangeTracker
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.389 s - in org.apache.hadoop.hbase.regionserver.TestDateTieredCompactionPolicyOverflow
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMultiVersionConcurrencyControlBasic
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestDataBlockEncodingTool
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.184 s - in org.apache.hadoop.hbase.regionserver.TestMultiVersionConcurrencyControlBasic
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestHRegionInfo
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.694 s - in org.apache.hadoop.hbase.regionserver.TestDataBlockEncodingTool
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestWALMonotonicallyIncreasingSeqId
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestCacheOnWriteInSchema
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.923 s - in org.apache.hadoop.hbase.regionserver.TestHRegionInfo
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestDefaultCompactSelection
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.524 s - in org.apache.hadoop.hbase.regionserver.TestCacheOnWriteInSchema
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestDateTieredCompactionPolicy
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.464 s - in org.apache.hadoop.hbase.regionserver.TestWALMonotonicallyIncreasingSeqId
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMiniBatchOperationInProgress
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.248 s - in org.apache.hadoop.hbase.regionserver.TestMiniBatchOperationInProgress
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.2 s - in org.apache.hadoop.hbase.regionserver.TestDefaultCompactSelection
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestDefaultStoreEngine
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.888 s - in org.apache.hadoop.hbase.regionserver.TestDateTieredCompactionPolicy
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.515 s - in org.apache.hadoop.hbase.regionserver.TestDefaultStoreEngine
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestSwitchToStreamRead
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestStoreScanner
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRegionServerAccounting
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.626 s - in org.apache.hadoop.hbase.regionserver.TestRegionServerAccounting
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMemStoreChunkPool
+[WARNING] Tests run: 24, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.043 s - in org.apache.hadoop.hbase.regionserver.TestStoreScanner
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.734 s - in org.apache.hadoop.hbase.regionserver.TestMemStoreChunkPool
+[WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 6.817 s - in org.apache.hadoop.hbase.regionserver.TestSwitchToStreamRead
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRowPrefixBloomFilter
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestFSWALEntry
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 s - in org.apache.hadoop.hbase.regionserver.wal.TestFSWALEntry
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestCustomWALCellCodec
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.321 s - in org.apache.hadoop.hbase.regionserver.wal.TestCustomWALCellCodec
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestMetricsWAL
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.022 s - in org.apache.hadoop.hbase.regionserver.TestRowPrefixBloomFilter
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.555 s - in org.apache.hadoop.hbase.regionserver.wal.TestMetricsWAL
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestAsyncFSWALDurability
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestWALCellCodecWithCompression
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.505 s - in org.apache.hadoop.hbase.regionserver.wal.TestWALCellCodecWithCompression
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.155 s - in org.apache.hadoop.hbase.regionserver.wal.TestAsyncFSWALDurability
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestSequenceIdAccounting
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 s - in org.apache.hadoop.hbase.regionserver.wal.TestSequenceIdAccounting
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestCompressor
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.521 s - in org.apache.hadoop.hbase.regionserver.wal.TestCompressor
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestWALActionsListener
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestSyncFuture
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.353 s - in org.apache.hadoop.hbase.regionserver.wal.TestWALActionsListener
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.236 s - in org.apache.hadoop.hbase.regionserver.wal.TestSyncFuture
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestAsyncProtobufLog
+[INFO] Running org.apache.hadoop.hbase.regionserver.wal.TestWALConfiguration
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMetricsTableLatencies
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.792 s - in org.apache.hadoop.hbase.regionserver.wal.TestWALConfiguration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.566 s - in org.apache.hadoop.hbase.regionserver.wal.TestAsyncProtobufLog
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.824 s - in org.apache.hadoop.hbase.regionserver.TestMetricsTableLatencies
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestMetricsRegion
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRegionSplitPolicy
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.967 s - in org.apache.hadoop.hbase.regionserver.TestMetricsRegion
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestGetClosestAtOrBefore
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRegionServerRegionSpaceUseReport
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestWideScanner
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.034 s - in org.apache.hadoop.hbase.regionserver.TestRegionSplitPolicy
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.36 s - in org.apache.hadoop.hbase.regionserver.TestRegionServerRegionSpaceUseReport
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.34 s - in org.apache.hadoop.hbase.regionserver.TestWideScanner
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.536 s - in org.apache.hadoop.hbase.regionserver.TestGetClosestAtOrBefore
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestCompactionArchiveConcurrentClose
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestKeyValueHeap
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.499 s - in org.apache.hadoop.hbase.regionserver.TestKeyValueHeap
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRpcSchedulerFactory
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRSStatusServlet
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.189 s - in org.apache.hadoop.hbase.regionserver.TestRpcSchedulerFactory
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.87 s - in org.apache.hadoop.hbase.regionserver.TestCompactionArchiveConcurrentClose
+[INFO] Running org.apache.hadoop.hbase.regionserver.TestRecoveredEditsReplayAndAbort
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.097 s - in org.apache.hadoop.hbase.regionserver.TestRSStatusServlet
+[INFO] Running org.apache.hadoop.hbase.regionserver.throttle.TestStoreHotnessProtector
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7 s - in org.apache.hadoop.hbase.regionserver.TestRecoveredEditsReplayAndAbort
+[INFO] Running org.apache.hadoop.hbase.procedure2.store.region.TestRegionProcedureStoreMigration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.306 s - in org.apache.hadoop.hbase.regionserver.throttle.TestStoreHotnessProtector
+[INFO] Running org.apache.hadoop.hbase.procedure2.store.region.TestWALProcedurePrettyPrinter
+[INFO] Running org.apache.hadoop.hbase.procedure2.store.region.TestHFileProcedurePrettyPrinter
+[INFO] Running org.apache.hadoop.hbase.procedure2.store.region.TestRegionProcedureStore
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.684 s - in org.apache.hadoop.hbase.procedure2.store.region.TestRegionProcedureStoreMigration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.773 s - in org.apache.hadoop.hbase.procedure2.store.region.TestWALProcedurePrettyPrinter
+[INFO] Running org.apache.hadoop.hbase.TestTagRewriteCell
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.273 s - in org.apache.hadoop.hbase.procedure2.store.region.TestHFileProcedurePrettyPrinter
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in org.apache.hadoop.hbase.TestTagRewriteCell
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.137 s - in org.apache.hadoop.hbase.procedure2.store.region.TestRegionProcedureStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   TestDefaultLoadBalancer.testBalanceClusterOverallStrictly:235 expected:<6> but was:<5>
+[INFO] 
+[ERROR] Tests run: 1026, Failures: 1, Errors: 0, Skipped: 4
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11:57 min
+[INFO] Finished at: 2025-05-21T23:30:32+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M4:test (default-test) on project hbase-server: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/carol/Desktop/benchmark/bugs-dot-jar/hbase/hbase-server/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
