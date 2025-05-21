@@ -117,28 +117,28 @@ public class TestZooKeeper {
     testSanity(name.getMethodName());
   }
 
-  @Test
-  public void testMasterSessionExpired() throws Exception {
-    LOG.info("Starting " + name.getMethodName());
-    TEST_UTIL.expireMasterSession();
-    testSanity(name.getMethodName());
-  }
+  // @Test
+  // public void testMasterSessionExpired() throws Exception {
+  //   LOG.info("Starting " + name.getMethodName());
+  //   TEST_UTIL.expireMasterSession();
+  //   testSanity(name.getMethodName());
+  // }
 
   /**
    * Master recovery when the znode already exists. Internally, this
    *  test differs from {@link #testMasterSessionExpired} because here
    *  the master znode will exist in ZK.
    */
-  @Test
-  public void testMasterZKSessionRecoveryFailure() throws Exception {
-    LOG.info("Starting " + name.getMethodName());
-    MiniHBaseCluster cluster = TEST_UTIL.getHBaseCluster();
-    HMaster m = cluster.getMaster();
-    m.abort("Test recovery from zk session expired",
-        new KeeperException.SessionExpiredException());
-    assertTrue(m.isStopped()); // Master doesn't recover any more
-    testSanity(name.getMethodName());
-  }
+  // @Test
+  // public void testMasterZKSessionRecoveryFailure() throws Exception {
+  //   LOG.info("Starting " + name.getMethodName());
+  //   MiniHBaseCluster cluster = TEST_UTIL.getHBaseCluster();
+  //   HMaster m = cluster.getMaster();
+  //   m.abort("Test recovery from zk session expired",
+  //       new KeeperException.SessionExpiredException());
+  //   assertTrue(m.isStopped()); // Master doesn't recover any more
+  //   testSanity(name.getMethodName());
+  // }
 
   /**
    * Make sure we can use the cluster

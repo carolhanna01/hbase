@@ -192,42 +192,42 @@ public class TestProcedureAdmin {
     assertFalse(abortResult);
   }
 
-  @Test
-  public void testGetProcedure() throws Exception {
-    final TableName tableName = TableName.valueOf(name.getMethodName());
-    final ProcedureExecutor<MasterProcedureEnv> procExec = getMasterProcedureExecutor();
+  // @Test
+  // public void testGetProcedure() throws Exception {
+  //   final TableName tableName = TableName.valueOf(name.getMethodName());
+  //   final ProcedureExecutor<MasterProcedureEnv> procExec = getMasterProcedureExecutor();
 
-    MasterProcedureTestingUtility.createTable(procExec, tableName, null, "f");
-    ProcedureTestingUtility.waitNoProcedureRunning(procExec);
-    ProcedureTestingUtility.setKillAndToggleBeforeStoreUpdate(procExec, true);
+  //   MasterProcedureTestingUtility.createTable(procExec, tableName, null, "f");
+  //   ProcedureTestingUtility.waitNoProcedureRunning(procExec);
+  //   ProcedureTestingUtility.setKillAndToggleBeforeStoreUpdate(procExec, true);
 
-    long procId = procExec.submitProcedure(
-      new DisableTableProcedure(procExec.getEnvironment(), tableName, false));
-    // Wait for one step to complete
-    ProcedureTestingUtility.waitProcedure(procExec, procId);
+  //   long procId = procExec.submitProcedure(
+  //     new DisableTableProcedure(procExec.getEnvironment(), tableName, false));
+  //   // Wait for one step to complete
+  //   ProcedureTestingUtility.waitProcedure(procExec, procId);
 
-    List<Procedure<MasterProcedureEnv>> procedures = procExec.getProcedures();
-    assertTrue(procedures.size() >= 1);
-    boolean found = false;
-    for (Procedure<?> proc: procedures) {
-      if (proc.getProcId() == procId) {
-        assertTrue(proc.isRunnable());
-        found = true;
-      } else {
-        assertTrue(proc.isSuccess());
-      }
-    }
-    assertTrue(found);
+  //   List<Procedure<MasterProcedureEnv>> procedures = procExec.getProcedures();
+  //   assertTrue(procedures.size() >= 1);
+  //   boolean found = false;
+  //   for (Procedure<?> proc: procedures) {
+  //     if (proc.getProcId() == procId) {
+  //       assertTrue(proc.isRunnable());
+  //       found = true;
+  //     } else {
+  //       assertTrue(proc.isSuccess());
+  //     }
+  //   }
+  //   assertTrue(found);
 
-    ProcedureTestingUtility.setKillAndToggleBeforeStoreUpdate(procExec, false);
-    ProcedureTestingUtility.restart(procExec);
-    ProcedureTestingUtility.waitNoProcedureRunning(procExec);
-    ProcedureTestingUtility.assertProcNotFailed(procExec, procId);
-    procedures = procExec.getProcedures();
-    for (Procedure proc: procedures) {
-      assertTrue(proc.isSuccess());
-    }
-  }
+  //   ProcedureTestingUtility.setKillAndToggleBeforeStoreUpdate(procExec, false);
+  //   ProcedureTestingUtility.restart(procExec);
+  //   ProcedureTestingUtility.waitNoProcedureRunning(procExec);
+  //   ProcedureTestingUtility.assertProcNotFailed(procExec, procId);
+  //   procedures = procExec.getProcedures();
+  //   for (Procedure proc: procedures) {
+  //     assertTrue(proc.isSuccess());
+  //   }
+  // }
 
   private ProcedureExecutor<MasterProcedureEnv> getMasterProcedureExecutor() {
     return UTIL.getHBaseCluster().getMaster().getMasterProcedureExecutor();

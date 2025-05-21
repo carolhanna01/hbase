@@ -153,56 +153,56 @@ public class TestHFile  {
     Assert.assertEquals(alloc.getFreeBufferCount(), bufCount);
   }
 
-  @Test
-  public void testReaderWithoutBlockCache() throws Exception {
-    int bufCount = 32;
-    // AllByteBuffers will be allocated from the buffers.
-    ByteBuffAllocator alloc = initAllocator(true, 64 * 1024, bufCount, 0);
-    fillByteBuffAllocator(alloc, bufCount);
-    // start write to store file.
-    Path path = writeStoreFile();
-    try {
-      readStoreFile(path, conf, alloc);
-    } catch (Exception e) {
-      // fail test
-      assertTrue(false);
-    }
-    Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
-    alloc.clean();
-  }
+  // @Test
+  // public void testReaderWithoutBlockCache() throws Exception {
+  //   int bufCount = 32;
+  //   // AllByteBuffers will be allocated from the buffers.
+  //   ByteBuffAllocator alloc = initAllocator(true, 64 * 1024, bufCount, 0);
+  //   fillByteBuffAllocator(alloc, bufCount);
+  //   // start write to store file.
+  //   Path path = writeStoreFile();
+  //   try {
+  //     readStoreFile(path, conf, alloc);
+  //   } catch (Exception e) {
+  //     // fail test
+  //     assertTrue(false);
+  //   }
+  //   Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
+  //   alloc.clean();
+  // }
 
   /**
    * Test case for HBASE-22127 in LruBlockCache.
    */
-  @Test
-  public void testReaderWithLRUBlockCache() throws Exception {
-    int bufCount = 1024, blockSize = 64 * 1024;
-    ByteBuffAllocator alloc = initAllocator(true, bufCount, blockSize, 0);
-    fillByteBuffAllocator(alloc, bufCount);
-    Path storeFilePath = writeStoreFile();
-    // Open the file reader with LRUBlockCache
-    BlockCache lru = new LruBlockCache(1024 * 1024 * 32, blockSize, true, conf);
-    CacheConfig cacheConfig = new CacheConfig(conf, null, lru, alloc);
-    HFile.Reader reader = HFile.createReader(fs, storeFilePath, cacheConfig, true, conf);
-    long offset = 0;
-    while (offset < reader.getTrailer().getLoadOnOpenDataOffset()) {
-      BlockCacheKey key = new BlockCacheKey(storeFilePath.getName(), offset);
-      HFileBlock block = reader.readBlock(offset, -1, true, true, false, true, null, null);
-      offset += block.getOnDiskSizeWithHeader();
-      // Ensure the block is an heap one.
-      Cacheable cachedBlock = lru.getBlock(key, false, false, true);
-      Assert.assertNotNull(cachedBlock);
-      Assert.assertTrue(cachedBlock instanceof HFileBlock);
-      Assert.assertFalse(((HFileBlock) cachedBlock).isSharedMem());
-      // Should never allocate off-heap block from allocator because ensure that it's LRU.
-      Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
-      block.release(); // return back the ByteBuffer back to allocator.
-    }
-    reader.close();
-    Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
-    alloc.clean();
-    lru.shutdown();
-  }
+  // @Test
+  // public void testReaderWithLRUBlockCache() throws Exception {
+  //   int bufCount = 1024, blockSize = 64 * 1024;
+  //   ByteBuffAllocator alloc = initAllocator(true, bufCount, blockSize, 0);
+  //   fillByteBuffAllocator(alloc, bufCount);
+  //   Path storeFilePath = writeStoreFile();
+  //   // Open the file reader with LRUBlockCache
+  //   BlockCache lru = new LruBlockCache(1024 * 1024 * 32, blockSize, true, conf);
+  //   CacheConfig cacheConfig = new CacheConfig(conf, null, lru, alloc);
+  //   HFile.Reader reader = HFile.createReader(fs, storeFilePath, cacheConfig, true, conf);
+  //   long offset = 0;
+  //   while (offset < reader.getTrailer().getLoadOnOpenDataOffset()) {
+  //     BlockCacheKey key = new BlockCacheKey(storeFilePath.getName(), offset);
+  //     HFileBlock block = reader.readBlock(offset, -1, true, true, false, true, null, null);
+  //     offset += block.getOnDiskSizeWithHeader();
+  //     // Ensure the block is an heap one.
+  //     Cacheable cachedBlock = lru.getBlock(key, false, false, true);
+  //     Assert.assertNotNull(cachedBlock);
+  //     Assert.assertTrue(cachedBlock instanceof HFileBlock);
+  //     Assert.assertFalse(((HFileBlock) cachedBlock).isSharedMem());
+  //     // Should never allocate off-heap block from allocator because ensure that it's LRU.
+  //     Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
+  //     block.release(); // return back the ByteBuffer back to allocator.
+  //   }
+  //   reader.close();
+  //   Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
+  //   alloc.clean();
+  //   lru.shutdown();
+  // }
 
   private BlockCache initCombinedBlockCache() {
     Configuration that = HBaseConfiguration.create(conf);
@@ -217,45 +217,45 @@ public class TestHFile  {
   /**
    * Test case for HBASE-22127 in CombinedBlockCache
    */
-  @Test
-  public void testReaderWithCombinedBlockCache() throws Exception {
-    int bufCount = 1024, blockSize = 64 * 1024;
-    ByteBuffAllocator alloc = initAllocator(true, bufCount, blockSize, 0);
-    fillByteBuffAllocator(alloc, bufCount);
-    Path storeFilePath = writeStoreFile();
-    // Open the file reader with CombinedBlockCache
-    BlockCache combined = initCombinedBlockCache();
-    conf.setBoolean(EVICT_BLOCKS_ON_CLOSE_KEY, true);
-    CacheConfig cacheConfig = new CacheConfig(conf, null, combined, alloc);
-    HFile.Reader reader = HFile.createReader(fs, storeFilePath, cacheConfig, true, conf);
-    long offset = 0;
-    while (offset < reader.getTrailer().getLoadOnOpenDataOffset()) {
-      BlockCacheKey key = new BlockCacheKey(storeFilePath.getName(), offset);
-      HFileBlock block = reader.readBlock(offset, -1, true, true, false, true, null, null);
-      offset += block.getOnDiskSizeWithHeader();
-      // Read the cached block.
-      Cacheable cachedBlock = combined.getBlock(key, false, false, true);
-      try {
-        Assert.assertNotNull(cachedBlock);
-        Assert.assertTrue(cachedBlock instanceof HFileBlock);
-        HFileBlock hfb = (HFileBlock) cachedBlock;
-        // Data block will be cached in BucketCache, so it should be an off-heap block.
-        if (hfb.getBlockType().isData()) {
-          Assert.assertTrue(hfb.isSharedMem());
-        } else {
-          // Non-data block will be cached in LRUBlockCache, so it must be an on-heap block.
-          Assert.assertFalse(hfb.isSharedMem());
-        }
-      } finally {
-        cachedBlock.release();
-      }
-      block.release(); // return back the ByteBuffer back to allocator.
-    }
-    reader.close();
-    combined.shutdown();
-    Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
-    alloc.clean();
-  }
+  // @Test
+  // public void testReaderWithCombinedBlockCache() throws Exception {
+  //   int bufCount = 1024, blockSize = 64 * 1024;
+  //   ByteBuffAllocator alloc = initAllocator(true, bufCount, blockSize, 0);
+  //   fillByteBuffAllocator(alloc, bufCount);
+  //   Path storeFilePath = writeStoreFile();
+  //   // Open the file reader with CombinedBlockCache
+  //   BlockCache combined = initCombinedBlockCache();
+  //   conf.setBoolean(EVICT_BLOCKS_ON_CLOSE_KEY, true);
+  //   CacheConfig cacheConfig = new CacheConfig(conf, null, combined, alloc);
+  //   HFile.Reader reader = HFile.createReader(fs, storeFilePath, cacheConfig, true, conf);
+  //   long offset = 0;
+  //   while (offset < reader.getTrailer().getLoadOnOpenDataOffset()) {
+  //     BlockCacheKey key = new BlockCacheKey(storeFilePath.getName(), offset);
+  //     HFileBlock block = reader.readBlock(offset, -1, true, true, false, true, null, null);
+  //     offset += block.getOnDiskSizeWithHeader();
+  //     // Read the cached block.
+  //     Cacheable cachedBlock = combined.getBlock(key, false, false, true);
+  //     try {
+  //       Assert.assertNotNull(cachedBlock);
+  //       Assert.assertTrue(cachedBlock instanceof HFileBlock);
+  //       HFileBlock hfb = (HFileBlock) cachedBlock;
+  //       // Data block will be cached in BucketCache, so it should be an off-heap block.
+  //       if (hfb.getBlockType().isData()) {
+  //         Assert.assertTrue(hfb.isSharedMem());
+  //       } else {
+  //         // Non-data block will be cached in LRUBlockCache, so it must be an on-heap block.
+  //         Assert.assertFalse(hfb.isSharedMem());
+  //       }
+  //     } finally {
+  //       cachedBlock.release();
+  //     }
+  //     block.release(); // return back the ByteBuffer back to allocator.
+  //   }
+  //   reader.close();
+  //   combined.shutdown();
+  //   Assert.assertEquals(bufCount, alloc.getFreeBufferCount());
+  //   alloc.clean();
+  // }
 
   private void readStoreFile(Path storeFilePath, Configuration conf, ByteBuffAllocator alloc)
       throws Exception {

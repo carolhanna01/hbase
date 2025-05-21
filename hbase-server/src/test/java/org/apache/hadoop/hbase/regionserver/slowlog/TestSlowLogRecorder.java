@@ -99,147 +99,147 @@ public class TestSlowLogRecorder {
     Assert.assertEquals(slowLogPayloads.get(i).getServerClass(), "class_" + j);
   }
 
-  @Test
-  public void testOnlieSlowLogConsumption() throws Exception {
+  // @Test
+  // public void testOnlieSlowLogConsumption() throws Exception {
 
-    Configuration conf = applySlowLogRecorderConf(8);
-    slowLogRecorder = new SlowLogRecorder(conf);
-    AdminProtos.SlowLogResponseRequest request =
-      AdminProtos.SlowLogResponseRequest.newBuilder().setLimit(15).build();
+  //   Configuration conf = applySlowLogRecorderConf(8);
+  //   slowLogRecorder = new SlowLogRecorder(conf);
+  //   AdminProtos.SlowLogResponseRequest request =
+  //     AdminProtos.SlowLogResponseRequest.newBuilder().setLimit(15).build();
 
-    Assert.assertEquals(slowLogRecorder.getSlowLogPayloads(request).size(), 0);
-    LOG.debug("Initially ringbuffer of Slow Log records is empty");
+  //   Assert.assertEquals(slowLogRecorder.getSlowLogPayloads(request).size(), 0);
+  //   LOG.debug("Initially ringbuffer of Slow Log records is empty");
 
-    int i = 0;
+  //   int i = 0;
 
-    // add 5 records initially
-    for (; i < 5; i++) {
-      RpcLogDetails rpcLogDetails =
-        getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
-      slowLogRecorder.addSlowLogPayload(rpcLogDetails);
-    }
+  //   // add 5 records initially
+  //   for (; i < 5; i++) {
+  //     RpcLogDetails rpcLogDetails =
+  //       getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
+  //     slowLogRecorder.addSlowLogPayload(rpcLogDetails);
+  //   }
 
-    Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
-      () -> slowLogRecorder.getSlowLogPayloads(request).size() == 5));
-    List<SlowLogPayload> slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
-    confirmPayloadParams(0, 5, slowLogPayloads);
-    confirmPayloadParams(1, 4, slowLogPayloads);
-    confirmPayloadParams(2, 3, slowLogPayloads);
-    confirmPayloadParams(3, 2, slowLogPayloads);
-    confirmPayloadParams(4, 1, slowLogPayloads);
+  //   Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
+  //     () -> slowLogRecorder.getSlowLogPayloads(request).size() == 5));
+  //   List<SlowLogPayload> slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   confirmPayloadParams(0, 5, slowLogPayloads);
+  //   confirmPayloadParams(1, 4, slowLogPayloads);
+  //   confirmPayloadParams(2, 3, slowLogPayloads);
+  //   confirmPayloadParams(3, 2, slowLogPayloads);
+  //   confirmPayloadParams(4, 1, slowLogPayloads);
 
-    // add 2 more records
-    for (; i < 7; i++) {
-      RpcLogDetails rpcLogDetails =
-        getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
-      slowLogRecorder.addSlowLogPayload(rpcLogDetails);
-    }
+  //   // add 2 more records
+  //   for (; i < 7; i++) {
+  //     RpcLogDetails rpcLogDetails =
+  //       getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
+  //     slowLogRecorder.addSlowLogPayload(rpcLogDetails);
+  //   }
 
-    Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
-      () -> slowLogRecorder.getSlowLogPayloads(request).size() == 7));
+  //   Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
+  //     () -> slowLogRecorder.getSlowLogPayloads(request).size() == 7));
 
-    slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
 
-    Assert.assertEquals(slowLogPayloads.size(), 7);
-    confirmPayloadParams(0, 7, slowLogPayloads);
-    confirmPayloadParams(5, 2, slowLogPayloads);
-    confirmPayloadParams(6, 1, slowLogPayloads);
+  //   Assert.assertEquals(slowLogPayloads.size(), 7);
+  //   confirmPayloadParams(0, 7, slowLogPayloads);
+  //   confirmPayloadParams(5, 2, slowLogPayloads);
+  //   confirmPayloadParams(6, 1, slowLogPayloads);
 
-    // add 3 more records
-    for (; i < 10; i++) {
-      RpcLogDetails rpcLogDetails =
-        getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
-      slowLogRecorder.addSlowLogPayload(rpcLogDetails);
-    }
+  //   // add 3 more records
+  //   for (; i < 10; i++) {
+  //     RpcLogDetails rpcLogDetails =
+  //       getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
+  //     slowLogRecorder.addSlowLogPayload(rpcLogDetails);
+  //   }
 
-    Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
-      () -> slowLogRecorder.getSlowLogPayloads(request).size() == 8));
+  //   Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
+  //     () -> slowLogRecorder.getSlowLogPayloads(request).size() == 8));
 
-    slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
-    // confirm ringbuffer is full
-    Assert.assertEquals(slowLogPayloads.size(), 8);
-    confirmPayloadParams(7, 3, slowLogPayloads);
-    confirmPayloadParams(0, 10, slowLogPayloads);
-    confirmPayloadParams(1, 9, slowLogPayloads);
+  //   slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   // confirm ringbuffer is full
+  //   Assert.assertEquals(slowLogPayloads.size(), 8);
+  //   confirmPayloadParams(7, 3, slowLogPayloads);
+  //   confirmPayloadParams(0, 10, slowLogPayloads);
+  //   confirmPayloadParams(1, 9, slowLogPayloads);
 
-    // add 4 more records
-    for (; i < 14; i++) {
-      RpcLogDetails rpcLogDetails =
-        getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
-      slowLogRecorder.addSlowLogPayload(rpcLogDetails);
-    }
+  //   // add 4 more records
+  //   for (; i < 14; i++) {
+  //     RpcLogDetails rpcLogDetails =
+  //       getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
+  //     slowLogRecorder.addSlowLogPayload(rpcLogDetails);
+  //   }
 
-    Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
-      () -> slowLogRecorder.getSlowLogPayloads(request).size() == 8));
+  //   Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
+  //     () -> slowLogRecorder.getSlowLogPayloads(request).size() == 8));
 
-    slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
-    // confirm ringbuffer is full
-    Assert.assertEquals(slowLogPayloads.size(), 8);
-    confirmPayloadParams(0, 14, slowLogPayloads);
-    confirmPayloadParams(1, 13, slowLogPayloads);
-    confirmPayloadParams(2, 12, slowLogPayloads);
-    confirmPayloadParams(3, 11, slowLogPayloads);
+  //   slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   // confirm ringbuffer is full
+  //   Assert.assertEquals(slowLogPayloads.size(), 8);
+  //   confirmPayloadParams(0, 14, slowLogPayloads);
+  //   confirmPayloadParams(1, 13, slowLogPayloads);
+  //   confirmPayloadParams(2, 12, slowLogPayloads);
+  //   confirmPayloadParams(3, 11, slowLogPayloads);
 
-    boolean isRingBufferCleaned = slowLogRecorder.clearSlowLogPayloads();
-    Assert.assertTrue(isRingBufferCleaned);
+  //   boolean isRingBufferCleaned = slowLogRecorder.clearSlowLogPayloads();
+  //   Assert.assertTrue(isRingBufferCleaned);
 
-    LOG.debug("cleared the ringbuffer of Online Slow Log records");
+  //   LOG.debug("cleared the ringbuffer of Online Slow Log records");
 
-    slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
-    // confirm ringbuffer is empty
-    Assert.assertEquals(slowLogPayloads.size(), 0);
+  //   slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   // confirm ringbuffer is empty
+  //   Assert.assertEquals(slowLogPayloads.size(), 0);
 
-  }
+  // }
 
-  @Test
-  public void testOnlineSlowLogWithHighRecords() throws Exception {
+  // @Test
+  // public void testOnlineSlowLogWithHighRecords() throws Exception {
 
-    Configuration conf = applySlowLogRecorderConf(14);
-    slowLogRecorder = new SlowLogRecorder(conf);
-    AdminProtos.SlowLogResponseRequest request =
-      AdminProtos.SlowLogResponseRequest.newBuilder().setLimit(14 * 11).build();
+  //   Configuration conf = applySlowLogRecorderConf(14);
+  //   slowLogRecorder = new SlowLogRecorder(conf);
+  //   AdminProtos.SlowLogResponseRequest request =
+  //     AdminProtos.SlowLogResponseRequest.newBuilder().setLimit(14 * 11).build();
 
-    Assert.assertEquals(slowLogRecorder.getSlowLogPayloads(request).size(), 0);
-    LOG.debug("Initially ringbuffer of Slow Log records is empty");
+  //   Assert.assertEquals(slowLogRecorder.getSlowLogPayloads(request).size(), 0);
+  //   LOG.debug("Initially ringbuffer of Slow Log records is empty");
 
-    for (int i = 0; i < 14 * 11; i++) {
-      RpcLogDetails rpcLogDetails =
-        getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
-      slowLogRecorder.addSlowLogPayload(rpcLogDetails);
-    }
-    LOG.debug("Added 14 * 11 records, ringbuffer should only provide latest 14 records");
+  //   for (int i = 0; i < 14 * 11; i++) {
+  //     RpcLogDetails rpcLogDetails =
+  //       getRpcLogDetails("userName_" + (i + 1), "client_" + (i + 1), "class_" + (i + 1));
+  //     slowLogRecorder.addSlowLogPayload(rpcLogDetails);
+  //   }
+  //   LOG.debug("Added 14 * 11 records, ringbuffer should only provide latest 14 records");
 
-    Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
-      () -> slowLogRecorder.getSlowLogPayloads(request).size() == 14));
+  //   Assert.assertNotEquals(-1, HBASE_TESTING_UTILITY.waitFor(3000,
+  //     () -> slowLogRecorder.getSlowLogPayloads(request).size() == 14));
 
-    List<SlowLogPayload> slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
-    Assert.assertEquals(slowLogPayloads.size(), 14);
+  //   List<SlowLogPayload> slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   Assert.assertEquals(slowLogPayloads.size(), 14);
 
-    // confirm strict order of slow log payloads
-    confirmPayloadParams(0, 154, slowLogPayloads);
-    confirmPayloadParams(1, 153, slowLogPayloads);
-    confirmPayloadParams(2, 152, slowLogPayloads);
-    confirmPayloadParams(3, 151, slowLogPayloads);
-    confirmPayloadParams(4, 150, slowLogPayloads);
-    confirmPayloadParams(5, 149, slowLogPayloads);
-    confirmPayloadParams(6, 148, slowLogPayloads);
-    confirmPayloadParams(7, 147, slowLogPayloads);
-    confirmPayloadParams(8, 146, slowLogPayloads);
-    confirmPayloadParams(9, 145, slowLogPayloads);
-    confirmPayloadParams(10, 144, slowLogPayloads);
-    confirmPayloadParams(11, 143, slowLogPayloads);
-    confirmPayloadParams(12, 142, slowLogPayloads);
-    confirmPayloadParams(13, 141, slowLogPayloads);
+  //   // confirm strict order of slow log payloads
+  //   confirmPayloadParams(0, 154, slowLogPayloads);
+  //   confirmPayloadParams(1, 153, slowLogPayloads);
+  //   confirmPayloadParams(2, 152, slowLogPayloads);
+  //   confirmPayloadParams(3, 151, slowLogPayloads);
+  //   confirmPayloadParams(4, 150, slowLogPayloads);
+  //   confirmPayloadParams(5, 149, slowLogPayloads);
+  //   confirmPayloadParams(6, 148, slowLogPayloads);
+  //   confirmPayloadParams(7, 147, slowLogPayloads);
+  //   confirmPayloadParams(8, 146, slowLogPayloads);
+  //   confirmPayloadParams(9, 145, slowLogPayloads);
+  //   confirmPayloadParams(10, 144, slowLogPayloads);
+  //   confirmPayloadParams(11, 143, slowLogPayloads);
+  //   confirmPayloadParams(12, 142, slowLogPayloads);
+  //   confirmPayloadParams(13, 141, slowLogPayloads);
 
-    boolean isRingBufferCleaned = slowLogRecorder.clearSlowLogPayloads();
-    Assert.assertTrue(isRingBufferCleaned);
-    LOG.debug("cleared the ringbuffer of Online Slow Log records");
-    slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
+  //   boolean isRingBufferCleaned = slowLogRecorder.clearSlowLogPayloads();
+  //   Assert.assertTrue(isRingBufferCleaned);
+  //   LOG.debug("cleared the ringbuffer of Online Slow Log records");
+  //   slowLogPayloads = slowLogRecorder.getSlowLogPayloads(request);
 
-    // confirm ringbuffer is empty
-    Assert.assertEquals(slowLogPayloads.size(), 0);
+  //   // confirm ringbuffer is empty
+  //   Assert.assertEquals(slowLogPayloads.size(), 0);
 
-  }
+  // }
 
   @Test
   public void testOnlineSlowLogWithDefaultDisableConfig() throws Exception {

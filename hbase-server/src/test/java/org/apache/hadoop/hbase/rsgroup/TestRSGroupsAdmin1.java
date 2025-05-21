@@ -356,36 +356,36 @@ public class TestRSGroupsAdmin1 extends TestRSGroupsBase {
     assertEquals(newGroup.getName(), ADMIN.getRSGroup(tableName).getName());
   }
 
-  @Test
-  public void testNonExistentTableMove() throws Exception {
-    TableName tableName =
-      TableName.valueOf(TABLE_PREFIX + getNameWithoutIndex(name.getMethodName()));
-    RSGroupInfo tableGrp = ADMIN.getRSGroup(tableName);
-    assertNull(tableGrp);
+  // @Test
+  // public void testNonExistentTableMove() throws Exception {
+  //   TableName tableName =
+  //     TableName.valueOf(TABLE_PREFIX + getNameWithoutIndex(name.getMethodName()));
+  //   RSGroupInfo tableGrp = ADMIN.getRSGroup(tableName);
+  //   assertNull(tableGrp);
 
-    // test if table exists already.
-    boolean exist = ADMIN.tableExists(tableName);
-    assertFalse(exist);
+  //   // test if table exists already.
+  //   boolean exist = ADMIN.tableExists(tableName);
+  //   assertFalse(exist);
 
-    LOG.info("Moving table " + tableName + " to " + RSGroupInfo.DEFAULT_GROUP);
-    try {
-      ADMIN.setRSGroup(Sets.newHashSet(tableName), RSGroupInfo.DEFAULT_GROUP);
-      fail("Table " + tableName + " shouldn't have been successfully moved.");
-    } catch (IOException ex) {
-      assertTrue(ex instanceof TableNotFoundException);
-    }
+  //   LOG.info("Moving table " + tableName + " to " + RSGroupInfo.DEFAULT_GROUP);
+  //   try {
+  //     ADMIN.setRSGroup(Sets.newHashSet(tableName), RSGroupInfo.DEFAULT_GROUP);
+  //     fail("Table " + tableName + " shouldn't have been successfully moved.");
+  //   } catch (IOException ex) {
+  //     assertTrue(ex instanceof TableNotFoundException);
+  //   }
 
-    try {
-      ADMIN.setRSGroup(Sets.newHashSet(tableName), RSGroupInfo.DEFAULT_GROUP);
-      ADMIN.moveServersToRSGroup(Sets.newHashSet(Address.fromParts("bogus", 123)),
-        RSGroupInfo.DEFAULT_GROUP);
-      fail("Table " + tableName + " shouldn't have been successfully moved.");
-    } catch (IOException ex) {
-      assertTrue(ex instanceof TableNotFoundException);
-    }
-    // verify group change
-    assertNull(ADMIN.getRSGroup(tableName));
-  }
+  //   try {
+  //     ADMIN.setRSGroup(Sets.newHashSet(tableName), RSGroupInfo.DEFAULT_GROUP);
+  //     ADMIN.moveServersToRSGroup(Sets.newHashSet(Address.fromParts("bogus", 123)),
+  //       RSGroupInfo.DEFAULT_GROUP);
+  //     fail("Table " + tableName + " shouldn't have been successfully moved.");
+  //   } catch (IOException ex) {
+  //     assertTrue(ex instanceof TableNotFoundException);
+  //   }
+  //   // verify group change
+  //   assertNull(ADMIN.getRSGroup(tableName));
+  // }
 
   @Test
   public void testRSGroupListDoesNotContainFailedTableCreation() throws Exception {

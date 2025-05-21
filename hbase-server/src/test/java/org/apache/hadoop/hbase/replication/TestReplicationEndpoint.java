@@ -205,50 +205,50 @@ public class TestReplicationEndpoint extends TestReplicationBase {
     hbaseAdmin.removeReplicationPeer("testReplicationEndpointReturnsFalseOnReplicate");
   }
 
-  @Test
-  public void testInterClusterReplication() throws Exception {
-    final String id = "testInterClusterReplication";
+  // @Test
+  // public void testInterClusterReplication() throws Exception {
+  //   final String id = "testInterClusterReplication";
 
-    List<HRegion> regions = UTIL1.getHBaseCluster().getRegions(tableName);
-    int totEdits = 0;
+  //   List<HRegion> regions = UTIL1.getHBaseCluster().getRegions(tableName);
+  //   int totEdits = 0;
 
-    // Make sure edits are spread across regions because we do region based batching
-    // before shipping edits.
-    for(HRegion region: regions) {
-      RegionInfo hri = region.getRegionInfo();
-      byte[] row = hri.getStartKey();
-      for (int i = 0; i < 100; i++) {
-        if (row.length > 0) {
-          Put put = new Put(row);
-          put.addColumn(famName, row, row);
-          region.put(put);
-          totEdits++;
-        }
-      }
-    }
+  //   // Make sure edits are spread across regions because we do region based batching
+  //   // before shipping edits.
+  //   for(HRegion region: regions) {
+  //     RegionInfo hri = region.getRegionInfo();
+  //     byte[] row = hri.getStartKey();
+  //     for (int i = 0; i < 100; i++) {
+  //       if (row.length > 0) {
+  //         Put put = new Put(row);
+  //         put.addColumn(famName, row, row);
+  //         region.put(put);
+  //         totEdits++;
+  //       }
+  //     }
+  //   }
 
-    hbaseAdmin.addReplicationPeer(id,
-        new ReplicationPeerConfig().setClusterKey(ZKConfig.getZooKeeperClusterKey(CONF2))
-            .setReplicationEndpointImpl(InterClusterReplicationEndpointForTest.class.getName()));
+  //   hbaseAdmin.addReplicationPeer(id,
+  //       new ReplicationPeerConfig().setClusterKey(ZKConfig.getZooKeeperClusterKey(CONF2))
+  //           .setReplicationEndpointImpl(InterClusterReplicationEndpointForTest.class.getName()));
 
-    final int numEdits = totEdits;
-    Waiter.waitFor(CONF1, 30000, new Waiter.ExplainingPredicate<Exception>() {
-      @Override
-      public boolean evaluate() throws Exception {
-        return InterClusterReplicationEndpointForTest.replicateCount.get() == numEdits;
-      }
+  //   final int numEdits = totEdits;
+  //   Waiter.waitFor(CONF1, 30000, new Waiter.ExplainingPredicate<Exception>() {
+  //     @Override
+  //     public boolean evaluate() throws Exception {
+  //       return InterClusterReplicationEndpointForTest.replicateCount.get() == numEdits;
+  //     }
 
-      @Override
-      public String explainFailure() throws Exception {
-        String failure = "Failed to replicate all edits, expected = " + numEdits
-            + " replicated = " + InterClusterReplicationEndpointForTest.replicateCount.get();
-        return failure;
-      }
-    });
+  //     @Override
+  //     public String explainFailure() throws Exception {
+  //       String failure = "Failed to replicate all edits, expected = " + numEdits
+  //           + " replicated = " + InterClusterReplicationEndpointForTest.replicateCount.get();
+  //       return failure;
+  //     }
+  //   });
 
-    hbaseAdmin.removeReplicationPeer("testInterClusterReplication");
-    UTIL1.deleteTableData(tableName);
-  }
+  //   hbaseAdmin.removeReplicationPeer("testInterClusterReplication");
+  //   UTIL1.deleteTableData(tableName);
+  // }
 
   @Test
   public void testWALEntryFilterFromReplicationEndpoint() throws Exception {

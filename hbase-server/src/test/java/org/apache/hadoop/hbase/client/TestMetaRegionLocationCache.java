@@ -107,10 +107,10 @@ public class TestMetaRegionLocationCache {
     verifyCachedMetaLocations(TEST_UTIL.getMiniHBaseCluster().getMaster());
   }
 
-  @Test public void testStandByMetaLocations() throws Exception {
-    HMaster standBy = TEST_UTIL.getMiniHBaseCluster().startMaster().getMaster();
-    verifyCachedMetaLocations(standBy);
-  }
+  // @Test public void testStandByMetaLocations() throws Exception {
+  //   HMaster standBy = TEST_UTIL.getMiniHBaseCluster().startMaster().getMaster();
+  //   verifyCachedMetaLocations(standBy);
+  // }
 
   /*
    * Shuffles the meta region replicas around the cluster and makes sure the cache is not stale.

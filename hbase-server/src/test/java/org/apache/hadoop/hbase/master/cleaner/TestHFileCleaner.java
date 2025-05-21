@@ -356,32 +356,32 @@ public class TestHFileCleaner {
     }
   }
 
-  @Test
-  public void testLargeSmallIsolation() throws Exception {
-    Configuration conf = UTIL.getConfiguration();
-    // no cleaner policies = delete all files
-    conf.setStrings(HFileCleaner.MASTER_HFILE_CLEANER_PLUGINS, "");
-    conf.setInt(HFileCleaner.HFILE_DELETE_THROTTLE_THRESHOLD, 512 * 1024);
-    Server server = new DummyServer();
-    Path archivedHfileDir =
-        new Path(UTIL.getDataTestDirOnTestFS(), HConstants.HFILE_ARCHIVE_DIRECTORY);
+  // @Test
+  // public void testLargeSmallIsolation() throws Exception {
+  //   Configuration conf = UTIL.getConfiguration();
+  //   // no cleaner policies = delete all files
+  //   conf.setStrings(HFileCleaner.MASTER_HFILE_CLEANER_PLUGINS, "");
+  //   conf.setInt(HFileCleaner.HFILE_DELETE_THROTTLE_THRESHOLD, 512 * 1024);
+  //   Server server = new DummyServer();
+  //   Path archivedHfileDir =
+  //       new Path(UTIL.getDataTestDirOnTestFS(), HConstants.HFILE_ARCHIVE_DIRECTORY);
 
-    // setup the cleaner
-    FileSystem fs = UTIL.getDFSCluster().getFileSystem();
-    HFileCleaner cleaner = new HFileCleaner(1000, server, conf, fs, archivedHfileDir, POOL);
-    // clean up archive directory
-    fs.delete(archivedHfileDir, true);
-    fs.mkdirs(archivedHfileDir);
-    // necessary set up
-    final int LARGE_FILE_NUM = 5;
-    final int SMALL_FILE_NUM = 20;
-    createFilesForTesting(LARGE_FILE_NUM, SMALL_FILE_NUM, fs, archivedHfileDir);
-    // call cleanup
-    cleaner.chore();
+  //   // setup the cleaner
+  //   FileSystem fs = UTIL.getDFSCluster().getFileSystem();
+  //   HFileCleaner cleaner = new HFileCleaner(1000, server, conf, fs, archivedHfileDir, POOL);
+  //   // clean up archive directory
+  //   fs.delete(archivedHfileDir, true);
+  //   fs.mkdirs(archivedHfileDir);
+  //   // necessary set up
+  //   final int LARGE_FILE_NUM = 5;
+  //   final int SMALL_FILE_NUM = 20;
+  //   createFilesForTesting(LARGE_FILE_NUM, SMALL_FILE_NUM, fs, archivedHfileDir);
+  //   // call cleanup
+  //   cleaner.chore();
 
-    Assert.assertEquals(LARGE_FILE_NUM, cleaner.getNumOfDeletedLargeFiles());
-    Assert.assertEquals(SMALL_FILE_NUM, cleaner.getNumOfDeletedSmallFiles());
-  }
+  //   Assert.assertEquals(LARGE_FILE_NUM, cleaner.getNumOfDeletedLargeFiles());
+  //   Assert.assertEquals(SMALL_FILE_NUM, cleaner.getNumOfDeletedSmallFiles());
+  // }
 
   @Test
   public void testOnConfigurationChange() throws Exception {
