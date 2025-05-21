@@ -424,7 +424,6 @@ public class SimpleLoadBalancer extends BaseLoadBalancer {
         addRegionPlan(regionsToMove, fetchFromTail,
           server.getKey().getServerName(), regionsToReturn);
         numTaken++;
-        balanceInfo.setNumRegionsAdded(balanceInfo.getNumRegionsAdded() + 1);
       }
     }
 
