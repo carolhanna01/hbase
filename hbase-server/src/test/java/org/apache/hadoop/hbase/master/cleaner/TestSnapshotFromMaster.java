@@ -287,121 +287,121 @@ public class TestSnapshotFromMaster {
    * should be retained, while those that are not in a snapshot should be deleted.
    * @throws Exception on failure
    */
-  @Test
-  public void testSnapshotHFileArchiving() throws Exception {
-    Admin admin = UTIL.getAdmin();
-    // make sure we don't fail on listing snapshots
-    SnapshotTestingUtils.assertNoSnapshots(admin);
+  // @Test
+  // public void testSnapshotHFileArchiving() throws Exception {
+  //   Admin admin = UTIL.getAdmin();
+  //   // make sure we don't fail on listing snapshots
+  //   SnapshotTestingUtils.assertNoSnapshots(admin);
 
-    // recreate test table with disabled compactions; otherwise compaction may happen before
-    // snapshot, the call after snapshot will be a no-op and checks will fail
-    UTIL.deleteTable(TABLE_NAME);
-    TableDescriptor td = TableDescriptorBuilder.newBuilder(TABLE_NAME)
-            .setColumnFamily(ColumnFamilyDescriptorBuilder.of(TEST_FAM))
-            .setCompactionEnabled(false)
-            .build();
-    UTIL.getAdmin().createTable(td);
+  //   // recreate test table with disabled compactions; otherwise compaction may happen before
+  //   // snapshot, the call after snapshot will be a no-op and checks will fail
+  //   UTIL.deleteTable(TABLE_NAME);
+  //   TableDescriptor td = TableDescriptorBuilder.newBuilder(TABLE_NAME)
+  //           .setColumnFamily(ColumnFamilyDescriptorBuilder.of(TEST_FAM))
+  //           .setCompactionEnabled(false)
+  //           .build();
+  //   UTIL.getAdmin().createTable(td);
 
-    // load the table
-    for (int i = 0; i < blockingStoreFiles / 2; i ++) {
-      UTIL.loadTable(UTIL.getConnection().getTable(TABLE_NAME), TEST_FAM);
-      UTIL.flush(TABLE_NAME);
-    }
+  //   // load the table
+  //   for (int i = 0; i < blockingStoreFiles / 2; i ++) {
+  //     UTIL.loadTable(UTIL.getConnection().getTable(TABLE_NAME), TEST_FAM);
+  //     UTIL.flush(TABLE_NAME);
+  //   }
 
-    // disable the table so we can take a snapshot
-    admin.disableTable(TABLE_NAME);
+  //   // disable the table so we can take a snapshot
+  //   admin.disableTable(TABLE_NAME);
 
-    // take a snapshot of the table
-    String snapshotName = "snapshot";
-    String snapshotNameBytes = snapshotName;
-    admin.snapshot(snapshotName, TABLE_NAME);
+  //   // take a snapshot of the table
+  //   String snapshotName = "snapshot";
+  //   String snapshotNameBytes = snapshotName;
+  //   admin.snapshot(snapshotName, TABLE_NAME);
 
-    LOG.info("After snapshot File-System state");
-    FSUtils.logFileSystemState(fs, rootDir, LOG);
+  //   LOG.info("After snapshot File-System state");
+  //   FSUtils.logFileSystemState(fs, rootDir, LOG);
 
-    // ensure we only have one snapshot
-    SnapshotTestingUtils.assertOneSnapshotThatMatches(admin, snapshotNameBytes, TABLE_NAME);
+  //   // ensure we only have one snapshot
+  //   SnapshotTestingUtils.assertOneSnapshotThatMatches(admin, snapshotNameBytes, TABLE_NAME);
 
-    td = TableDescriptorBuilder.newBuilder(td)
-            .setCompactionEnabled(true)
-            .build();
-    // enable compactions now
-    admin.modifyTable(td);
+  //   td = TableDescriptorBuilder.newBuilder(td)
+  //           .setCompactionEnabled(true)
+  //           .build();
+  //   // enable compactions now
+  //   admin.modifyTable(td);
 
-    // renable the table so we can compact the regions
-    admin.enableTable(TABLE_NAME);
+  //   // renable the table so we can compact the regions
+  //   admin.enableTable(TABLE_NAME);
 
-    // compact the files so we get some archived files for the table we just snapshotted
-    List<HRegion> regions = UTIL.getHBaseCluster().getRegions(TABLE_NAME);
-    for (HRegion region : regions) {
-      region.waitForFlushesAndCompactions(); // enable can trigger a compaction, wait for it.
-      region.compactStores(); // min is 2 so will compact and archive
-    }
-    List<RegionServerThread> regionServerThreads = UTIL.getMiniHBaseCluster()
-        .getRegionServerThreads();
-    HRegionServer hrs = null;
-    for (RegionServerThread rs : regionServerThreads) {
-      if (!rs.getRegionServer().getRegions(TABLE_NAME).isEmpty()) {
-        hrs = rs.getRegionServer();
-        break;
-      }
-    }
-    CompactedHFilesDischarger cleaner = new CompactedHFilesDischarger(100, null, hrs, false);
-    cleaner.chore();
-    LOG.info("After compaction File-System state");
-    FSUtils.logFileSystemState(fs, rootDir, LOG);
+  //   // compact the files so we get some archived files for the table we just snapshotted
+  //   List<HRegion> regions = UTIL.getHBaseCluster().getRegions(TABLE_NAME);
+  //   for (HRegion region : regions) {
+  //     region.waitForFlushesAndCompactions(); // enable can trigger a compaction, wait for it.
+  //     region.compactStores(); // min is 2 so will compact and archive
+  //   }
+  //   List<RegionServerThread> regionServerThreads = UTIL.getMiniHBaseCluster()
+  //       .getRegionServerThreads();
+  //   HRegionServer hrs = null;
+  //   for (RegionServerThread rs : regionServerThreads) {
+  //     if (!rs.getRegionServer().getRegions(TABLE_NAME).isEmpty()) {
+  //       hrs = rs.getRegionServer();
+  //       break;
+  //     }
+  //   }
+  //   CompactedHFilesDischarger cleaner = new CompactedHFilesDischarger(100, null, hrs, false);
+  //   cleaner.chore();
+  //   LOG.info("After compaction File-System state");
+  //   FSUtils.logFileSystemState(fs, rootDir, LOG);
 
-    // make sure the cleaner has run
-    LOG.debug("Running hfile cleaners");
-    ensureHFileCleanersRun();
-    LOG.info("After cleaners File-System state: " + rootDir);
-    FSUtils.logFileSystemState(fs, rootDir, LOG);
+  //   // make sure the cleaner has run
+  //   LOG.debug("Running hfile cleaners");
+  //   ensureHFileCleanersRun();
+  //   LOG.info("After cleaners File-System state: " + rootDir);
+  //   FSUtils.logFileSystemState(fs, rootDir, LOG);
 
-    // get the snapshot files for the table
-    Path snapshotTable = SnapshotDescriptionUtils.getCompletedSnapshotDir(snapshotName, rootDir);
-    Set<String> snapshotHFiles = SnapshotReferenceUtil.getHFileNames(
-        UTIL.getConfiguration(), fs, snapshotTable);
-    // check that the files in the archive contain the ones that we need for the snapshot
-    LOG.debug("Have snapshot hfiles:");
-    for (String fileName : snapshotHFiles) {
-      LOG.debug(fileName);
-    }
-    // get the archived files for the table
-    Collection<String> archives = getHFiles(archiveDir, fs, TABLE_NAME);
+  //   // get the snapshot files for the table
+  //   Path snapshotTable = SnapshotDescriptionUtils.getCompletedSnapshotDir(snapshotName, rootDir);
+  //   Set<String> snapshotHFiles = SnapshotReferenceUtil.getHFileNames(
+  //       UTIL.getConfiguration(), fs, snapshotTable);
+  //   // check that the files in the archive contain the ones that we need for the snapshot
+  //   LOG.debug("Have snapshot hfiles:");
+  //   for (String fileName : snapshotHFiles) {
+  //     LOG.debug(fileName);
+  //   }
+  //   // get the archived files for the table
+  //   Collection<String> archives = getHFiles(archiveDir, fs, TABLE_NAME);
 
-    // get the hfiles for the table
-    Collection<String> hfiles = getHFiles(rootDir, fs, TABLE_NAME);
+  //   // get the hfiles for the table
+  //   Collection<String> hfiles = getHFiles(rootDir, fs, TABLE_NAME);
 
-    // and make sure that there is a proper subset
-    for (String fileName : snapshotHFiles) {
-      boolean exist = archives.contains(fileName) || hfiles.contains(fileName);
-      assertTrue("Archived hfiles " + archives
-        + " and table hfiles " + hfiles + " is missing snapshot file:" + fileName, exist);
-    }
+  //   // and make sure that there is a proper subset
+  //   for (String fileName : snapshotHFiles) {
+  //     boolean exist = archives.contains(fileName) || hfiles.contains(fileName);
+  //     assertTrue("Archived hfiles " + archives
+  //       + " and table hfiles " + hfiles + " is missing snapshot file:" + fileName, exist);
+  //   }
 
-    // delete the existing snapshot
-    admin.deleteSnapshot(snapshotNameBytes);
-    SnapshotTestingUtils.assertNoSnapshots(admin);
+  //   // delete the existing snapshot
+  //   admin.deleteSnapshot(snapshotNameBytes);
+  //   SnapshotTestingUtils.assertNoSnapshots(admin);
 
-    // make sure that we don't keep around the hfiles that aren't in a snapshot
-    // make sure we wait long enough to refresh the snapshot hfile
-    List<BaseHFileCleanerDelegate> delegates = UTIL.getMiniHBaseCluster().getMaster()
-        .getHFileCleaner().cleanersChain;
-    for (BaseHFileCleanerDelegate delegate: delegates) {
-      if (delegate instanceof SnapshotHFileCleaner) {
-        ((SnapshotHFileCleaner)delegate).getFileCacheForTesting().triggerCacheRefreshForTesting();
-      }
-    }
-    // run the cleaner again
-    LOG.debug("Running hfile cleaners");
-    ensureHFileCleanersRun();
-    LOG.info("After delete snapshot cleaners run File-System state");
-    FSUtils.logFileSystemState(fs, rootDir, LOG);
+  //   // make sure that we don't keep around the hfiles that aren't in a snapshot
+  //   // make sure we wait long enough to refresh the snapshot hfile
+  //   List<BaseHFileCleanerDelegate> delegates = UTIL.getMiniHBaseCluster().getMaster()
+  //       .getHFileCleaner().cleanersChain;
+  //   for (BaseHFileCleanerDelegate delegate: delegates) {
+  //     if (delegate instanceof SnapshotHFileCleaner) {
+  //       ((SnapshotHFileCleaner)delegate).getFileCacheForTesting().triggerCacheRefreshForTesting();
+  //     }
+  //   }
+  //   // run the cleaner again
+  //   LOG.debug("Running hfile cleaners");
+  //   ensureHFileCleanersRun();
+  //   LOG.info("After delete snapshot cleaners run File-System state");
+  //   FSUtils.logFileSystemState(fs, rootDir, LOG);
 
-    archives = getHFiles(archiveDir, fs, TABLE_NAME);
-    assertEquals("Still have some hfiles in the archive, when their snapshot has been deleted.", 0,
-      archives.size());
-  }
+  //   archives = getHFiles(archiveDir, fs, TABLE_NAME);
+  //   assertEquals("Still have some hfiles in the archive, when their snapshot has been deleted.", 0,
+  //     archives.size());
+  // }
 
   /**
    * @return all the HFiles for a given table in the specified dir

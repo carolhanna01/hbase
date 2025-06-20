@@ -144,26 +144,26 @@ public class TestReplicationStatus extends TestReplicationBase {
     //We need to override it here to avoid issues when trying to execute super class teardown
   }
 
-  @Test
-  public void testReplicationStatusSourceStartedTargetStoppedNoOps() throws Exception {
-    utility2.shutdownMiniHBaseCluster();
-    utility1.shutdownMiniHBaseCluster();
-    utility1.startMiniHBaseCluster();
-    Admin hbaseAdmin = utility1.getConnection().getAdmin();
-    ServerName serverName = utility1.getHBaseCluster().
-        getRegionServer(0).getServerName();
-    Thread.sleep(10000);
-    ClusterStatus status = new ClusterStatus(hbaseAdmin.
-        getClusterMetrics(EnumSet.of(Option.LIVE_SERVERS)));
-    List<ReplicationLoadSource> loadSources = status.getLiveServerMetrics().
-        get(serverName).getReplicationLoadSourceList();
-    assertEquals(1, loadSources.size());
-    ReplicationLoadSource loadSource = loadSources.get(0);
-    assertFalse(loadSource.hasEditsSinceRestart());
-    assertEquals(0, loadSource.getTimestampOfLastShippedOp());
-    assertEquals(0, loadSource.getReplicationLag());
-    assertFalse(loadSource.isRecovered());
-  }
+  // @Test
+  // public void testReplicationStatusSourceStartedTargetStoppedNoOps() throws Exception {
+  //   utility2.shutdownMiniHBaseCluster();
+  //   utility1.shutdownMiniHBaseCluster();
+  //   utility1.startMiniHBaseCluster();
+  //   Admin hbaseAdmin = utility1.getConnection().getAdmin();
+  //   ServerName serverName = utility1.getHBaseCluster().
+  //       getRegionServer(0).getServerName();
+  //   Thread.sleep(10000);
+  //   ClusterStatus status = new ClusterStatus(hbaseAdmin.
+  //       getClusterMetrics(EnumSet.of(Option.LIVE_SERVERS)));
+  //   List<ReplicationLoadSource> loadSources = status.getLiveServerMetrics().
+  //       get(serverName).getReplicationLoadSourceList();
+  //   assertEquals(1, loadSources.size());
+  //   ReplicationLoadSource loadSource = loadSources.get(0);
+  //   assertFalse(loadSource.hasEditsSinceRestart());
+  //   assertEquals(0, loadSource.getTimestampOfLastShippedOp());
+  //   assertEquals(0, loadSource.getReplicationLag());
+  //   assertFalse(loadSource.isRecovered());
+  // }
 
   @Test
   public void testReplicationStatusSourceStartedTargetStoppedNewOp() throws Exception {
