@@ -1,0 +1,115 @@
+diff --git a/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/TakeSnapshotHandler.java b/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/TakeSnapshotHandler.java
+index 3b7d65a495..0d652646a1 100644
+--- a/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/TakeSnapshotHandler.java
++++ b/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/TakeSnapshotHandler.java
+@@ -277,6 +277,7 @@ public abstract class TakeSnapshotHandler extends EventHandler implements Snapsh
+     URI workingURI = workingDirFs.getUri();
+     URI rootURI = fs.getUri();
+     if ((!workingURI.getScheme().equals(rootURI.getScheme()) ||
++        workingURI.getAuthority() == null ||
+         !workingURI.getAuthority().equals(rootURI.getAuthority()) ||
+         workingURI.getUserInfo() == null ||
+         !workingURI.getUserInfo().equals(rootURI.getUserInfo()) ||
+@@ -365,5 +366,4 @@ public abstract class TakeSnapshotHandler extends EventHandler implements Snapsh
+   public ForeignException getException() {
+     return monitor.getException();
+   }
+-
+ }
+diff --git a/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/SnapshotDescriptionUtils.java b/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/SnapshotDescriptionUtils.java
+index 39202c4b18..203a58b67a 100644
+--- a/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/SnapshotDescriptionUtils.java
++++ b/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/SnapshotDescriptionUtils.java
+@@ -271,9 +271,11 @@ public final class SnapshotDescriptionUtils {
+    * @param conf configuration for the HBase cluster
+    * @return true if the given workingDir is a subdirectory of the default working directory for
+    *   snapshots, false otherwise
++   * @throws IOException if we can't get the root dir
+    */
+-  public static boolean isWithinDefaultWorkingDir(final Path workingDir, Configuration conf) {
+-    Path defaultWorkingDir = getDefaultWorkingSnapshotDir(new Path(conf.get(HConstants.HBASE_DIR)));
++  public static boolean isWithinDefaultWorkingDir(final Path workingDir, Configuration conf)
++    throws IOException {
++    Path defaultWorkingDir = getDefaultWorkingSnapshotDir(FSUtils.getRootDir(conf));
+     return workingDir.equals(defaultWorkingDir) || isSubDirectoryOf(workingDir, defaultWorkingDir);
+   }
+ 
+diff --git a/hbase-server/src/test/java/org/apache/hadoop/hbase/snapshot/TestSnapshotDescriptionUtils.java b/hbase-server/src/test/java/org/apache/hadoop/hbase/snapshot/TestSnapshotDescriptionUtils.java
+index 81568bb900..e2e52b40a6 100644
+--- a/hbase-server/src/test/java/org/apache/hadoop/hbase/snapshot/TestSnapshotDescriptionUtils.java
++++ b/hbase-server/src/test/java/org/apache/hadoop/hbase/snapshot/TestSnapshotDescriptionUtils.java
+@@ -26,6 +26,7 @@ import org.apache.hadoop.conf.Configuration;
+ import org.apache.hadoop.fs.FileSystem;
+ import org.apache.hadoop.fs.Path;
+ import org.apache.hadoop.hbase.HBaseClassTestRule;
++import org.apache.hadoop.hbase.HBaseConfiguration;
+ import org.apache.hadoop.hbase.HBaseTestingUtility;
+ import org.apache.hadoop.hbase.HConstants;
+ import org.apache.hadoop.hbase.testclassification.MediumTests;
+@@ -136,30 +137,53 @@ public class TestSnapshotDescriptionUtils {
+   }
+ 
+   @Test
+-  public void testIsWithinWorkingDir() {
++  public void testIsWithinWorkingDir() throws IOException {
+     Configuration conf = new Configuration();
+-    conf.set(HConstants.HBASE_DIR, "hdfs://root/");
++    conf.set(HConstants.HBASE_DIR, "hdfs://localhost/root/");
+ 
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://root/"), conf));
++        new Path("hdfs://localhost/root/"), conf));
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://root/.hbase-snapshotdir"), conf));
++        new Path("hdfs://localhost/root/.hbase-snapshotdir"), conf));
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://root/.hbase-snapshot"), conf));
++        new Path("hdfs://localhost/root/.hbase-snapshot"), conf));
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://.hbase-snapshot"), conf));
++        new Path("hdfs://localhost/.hbase-snapshot"), conf));
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://.hbase-snapshot/.tmp"), conf));
+-    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(new Path("hdfs://root"), conf));
++        new Path("hdfs://localhost/.hbase-snapshot/.tmp"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("hdfs://localhost/root"), conf));
+     assertTrue(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://root/.hbase-snapshot/.tmp"), conf));
++        new Path("hdfs://localhost/root/.hbase-snapshot/.tmp"), conf));
+     assertTrue(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("hdfs://root/.hbase-snapshot/.tmp/snapshot"), conf));
++        new Path("hdfs://localhost/root/.hbase-snapshot/.tmp/snapshot"), conf));
++
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++        new Path("s3://localhost/root/.hbase-snapshot/"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("s3://localhost/root"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++        new Path("s3://localhost/root/.hbase-snapshot/.tmp/snapshot"), conf));
++
++    // for local mode
++    conf = HBaseConfiguration.create();
++    String hbsaeDir = conf.get(HConstants.HBASE_DIR);
+ 
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("s3://root/.hbase-snapshot/"), conf));
+-    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(new Path("s3://root"), conf));
++      new Path("file:" + hbsaeDir + "/"), conf));
+     assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
+-        new Path("s3://root/.hbase-snapshot/.tmp/snapshot"), conf));
++      new Path("file:" + hbsaeDir + "/.hbase-snapshotdir"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:" + hbsaeDir + "/.hbase-snapshot"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:/.hbase-snapshot"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:/.hbase-snapshot/.tmp"), conf));
++    assertFalse(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:" + hbsaeDir), conf));
++    assertTrue(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:" + hbsaeDir + "/.hbase-snapshot/.tmp"), conf));
++    assertTrue(SnapshotDescriptionUtils.isWithinDefaultWorkingDir(
++      new Path("file:" + hbsaeDir + "/.hbase-snapshot/.tmp/snapshot"), conf));
+   }
+ }

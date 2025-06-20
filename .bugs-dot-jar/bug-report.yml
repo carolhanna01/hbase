@@ -1,0 +1,848 @@
+rss:
+  '@version': '0.92'
+  channel:
+    build-info:
+      build-date: 22-06-2022
+      build-number: '820010'
+      version: 8.20.10
+    description: This file is an XML representation of an issue
+    item:
+      assignee:
+        '#text': Toshihiro Suzuki
+        '@username': brfrn169
+      attachments:
+        attachment:
+          '@author': brfrn169
+          '@created': Sat, 23 Mar 2019 15:02:27 +0000
+          '@id': '12963505'
+          '@name': HBASE-22095.master.001.patch
+          '@size': '7395'
+      comments:
+        comment:
+        - '#text': <p>Could you please take a look at the patch? <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=zyork"
+            class="user-hover" rel="zyork">zyork</a></p>
+          '@author': brfrn169
+          '@created': Sat, 23 Mar 2019 15:06:05 +0000
+          '@id': '16799666'
+        - '#text': <p>LGTM. Let's wait for QA to come back.</p>
+          '@author': zyork
+          '@created': Sat, 23 Mar 2019 19:41:21 +0000
+          '@id': '16799767'
+        - '#text': '<div class=''table-wrap''>
+
+            <table class=''confluenceTable''><tbody>
+
+            <tr>
+
+            <td class=''confluenceTd''> <img class="emoticon" src="https://issues.apache.org/jira/images/icons/emoticons/error.png"
+            height="16" width="16" align="absmiddle" alt="" border="0"/> <b><font
+            color="red">-1 overall</font></b> </td>
+
+            </tr>
+
+            </tbody></table>
+
+            </div>
+
+
+            <p><br class="atl-forced-newline" />
+
+            <br class="atl-forced-newline" /></p>
+
+            <div class=''table-wrap''>
+
+            <table class=''confluenceTable''><tbody>
+
+            <tr>
+
+            <th class=''confluenceTh''> Vote </th>
+
+            <th class=''confluenceTh''> Subsystem </th>
+
+            <th class=''confluenceTh''> Runtime </th>
+
+            <th class=''confluenceTh''> Comment </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="blue">0</font> </td>
+
+            <td class=''confluenceTd''> <font color="blue"> reexec </font> </td>
+
+            <td class=''confluenceTd''> <font color="blue">  0m 18s</font> </td>
+
+            <td class=''confluenceTd''> <font color="blue"> Docker mode activated.
+            </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''> <font color="brown"> Prechecks </font> </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> hbaseanti </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m  0s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> Patch does not have any
+            anti-patterns. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> @author </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m  0s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> The patch does not contain
+            any @author tags. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> test4tests </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m  0s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> The patch appears to
+            include 1 new or modified test files. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''> <font color="brown"> master Compile Tests
+            </font> </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> mvninstall </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  3m 44s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> master passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> compile </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  1m 54s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> master passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> checkstyle </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  1m  2s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> master passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> shadedjars </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  3m 59s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> branch has no errors
+            when building our shaded downstream artifacts. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> findbugs </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  2m 49s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> master passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> javadoc </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m 28s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> master passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''> <font color="brown"> Patch Compile Tests </font>
+            </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> mvninstall </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  3m 49s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> compile </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  1m 56s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> javac </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  1m 56s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> checkstyle </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  1m  3s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> whitespace </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m  0s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> The patch has no whitespace
+            issues. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> shadedjars </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  4m  5s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> patch has no errors when
+            building our shaded downstream artifacts. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> hadoopcheck </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  7m 46s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> Patch does not cause
+            any errors with Hadoop 2.7.4 or 3.0.0. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> findbugs </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  3m 18s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> javadoc </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m 29s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> the patch passed </font>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''>&nbsp;</th>
+
+            <th class=''confluenceTh''> <font color="brown"> Other Tests </font> </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="red">-1</font> </td>
+
+            <td class=''confluenceTd''> <font color="red"> unit </font> </td>
+
+            <td class=''confluenceTd''> <font color="red">251m 54s</font> </td>
+
+            <td class=''confluenceTd''> <font color="red"> hbase-server in the patch
+            failed. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="green">+1</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> asflicense </font> </td>
+
+            <td class=''confluenceTd''> <font color="green">  0m 16s</font> </td>
+
+            <td class=''confluenceTd''> <font color="green"> The patch does not generate
+            ASF License warnings. </font> </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> <font color="black"></font> </td>
+
+            <td class=''confluenceTd''> <font color="black"> </font> </td>
+
+            <td class=''confluenceTd''> <font color="black">289m 22s</font> </td>
+
+            <td class=''confluenceTd''> <font color="black"> </font> </td>
+
+            </tr>
+
+            </tbody></table>
+
+            </div>
+
+
+            <p><br class="atl-forced-newline" />
+
+            <br class="atl-forced-newline" /></p>
+
+            <div class=''table-wrap''>
+
+            <table class=''confluenceTable''><tbody>
+
+            <tr>
+
+            <th class=''confluenceTh''> Reason </th>
+
+            <th class=''confluenceTh''> Tests </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Failed junit tests </td>
+
+            <td class=''confluenceTd''> hadoop.hbase.client.TestAdmin1 </td>
+
+            </tr>
+
+            </tbody></table>
+
+            </div>
+
+
+            <p><br class="atl-forced-newline" />
+
+            <br class="atl-forced-newline" /></p>
+
+            <div class=''table-wrap''>
+
+            <table class=''confluenceTable''><tbody>
+
+            <tr>
+
+            <th class=''confluenceTh''> Subsystem </th>
+
+            <th class=''confluenceTh''> Report/Notes </th>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Docker </td>
+
+            <td class=''confluenceTd''> Client=17.05.0-ce Server=17.05.0-ce Image:yetus/hbase:b002b0b
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> JIRA Issue </td>
+
+            <td class=''confluenceTd''> <a href="https://issues.apache.org/jira/browse/HBASE-22095"
+            title="Taking a snapshot fails in local mode" class="issue-link" data-issue-key="HBASE-22095"><del>HBASE-22095</del></a>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> JIRA Patch URL </td>
+
+            <td class=''confluenceTd''> <a href="https://issues.apache.org/jira/secure/attachment/12963505/HBASE-22095.master.001.patch"
+            class="external-link" rel="nofollow">https://issues.apache.org/jira/secure/attachment/12963505/HBASE-22095.master.001.patch</a>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Optional Tests </td>
+
+            <td class=''confluenceTd''>  dupname  asflicense  javac  javadoc  unit  findbugs  shadedjars  hadoopcheck  hbaseanti  checkstyle  compile  </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> uname </td>
+
+            <td class=''confluenceTd''> Linux b118458fb539 4.4.0-138-generic #164-Ubuntu
+            SMP Tue Oct 2 17:16:02 UTC 2018 x86_64 GNU/Linux </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Build tool </td>
+
+            <td class=''confluenceTd''> maven </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Personality </td>
+
+            <td class=''confluenceTd''> /home/jenkins/jenkins-slave/workspace/PreCommit-HBASE-Build/component/dev-support/hbase-personality.sh
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> git revision </td>
+
+            <td class=''confluenceTd''> master / 21cb00eef6 </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> maven </td>
+
+            <td class=''confluenceTd''> version: Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe;
+            2018-06-17T18:33:14Z) </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Default Java </td>
+
+            <td class=''confluenceTd''> 1.8.0_181 </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> findbugs </td>
+
+            <td class=''confluenceTd''> v3.1.11 </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> unit </td>
+
+            <td class=''confluenceTd''> <a href="https://builds.apache.org/job/PreCommit-HBASE-Build/16508/artifact/patchprocess/patch-unit-hbase-server.txt"
+            class="external-link" target="_blank" rel="nofollow noopener">https://builds.apache.org/job/PreCommit-HBASE-Build/16508/artifact/patchprocess/patch-unit-hbase-server.txt</a>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''>  Test Results </td>
+
+            <td class=''confluenceTd''> <a href="https://builds.apache.org/job/PreCommit-HBASE-Build/16508/testReport/"
+            class="external-link" target="_blank" rel="nofollow noopener">https://builds.apache.org/job/PreCommit-HBASE-Build/16508/testReport/</a>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Max. process+thread count </td>
+
+            <td class=''confluenceTd''> 5422 (vs. ulimit of 10000) </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> modules </td>
+
+            <td class=''confluenceTd''> C: hbase-server U: hbase-server </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Console output </td>
+
+            <td class=''confluenceTd''> <a href="https://builds.apache.org/job/PreCommit-HBASE-Build/16508/console"
+            class="external-link" target="_blank" rel="nofollow noopener">https://builds.apache.org/job/PreCommit-HBASE-Build/16508/console</a>
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td class=''confluenceTd''> Powered by </td>
+
+            <td class=''confluenceTd''> Apache Yetus 0.8.0   <a href="http://yetus.apache.org"
+            class="external-link" target="_blank" rel="nofollow noopener">http://yetus.apache.org</a>
+            </td>
+
+            </tr>
+
+            </tbody></table>
+
+            </div>
+
+
+
+
+            <p>This message was automatically generated.</p>'
+          '@author': hadoopqa
+          '@created': Sat, 23 Mar 2019 20:50:18 +0000
+          '@id': '16799793'
+        - '#text': '<p>Thank you for reviewing <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=zyork"
+            class="user-hover" rel="zyork">zyork</a>.</p>
+
+
+            <p>It looks like the test failure in the last QA is not related to the
+            patch. I will commit it.</p>'
+          '@author': brfrn169
+          '@created': Sun, 24 Mar 2019 04:40:31 +0000
+          '@id': '16799907'
+        - '#text': <p>Pushed to master, branch-2 and branch-2.2.</p>
+          '@author': brfrn169
+          '@created': Sun, 24 Mar 2019 04:57:44 +0000
+          '@id': '16799909'
+        - '#text': "<p>Results for branch master<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/881/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #881 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/881//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/881//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/master/881//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 source release artifact</font><br/>\n&#8211; See build output\
+            \ for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Sun, 24 Mar 2019 12:28:03 +0000
+          '@id': '16800014'
+        - '#text': "<p>Results for branch branch-2<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/1771/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #1771 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/1771//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/1771//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/error.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            red\">-1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2/1771//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 source release artifact</font><br/>\n&#8211; See build output\
+            \ for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 client integration test</font></p>"
+          '@author': hudson
+          '@created': Sun, 24 Mar 2019 18:45:48 +0000
+          '@id': '16800143'
+        - '#text': "<p>Results for branch branch-2.2<br/>\n\t<a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/128/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >build #128 on builds.a.o</a>: <img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <b><font color=\"red\">-1 overall</font></b></p>\n<hr />\n<p>details\
+            \ (if available):</p>\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/check.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"green\">+1 general checks</font><br/>\n&#8211; For more\
+            \ information <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/128//General_Nightly_Build_Report/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see general report</a></p>\n\n\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop2 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/128//JDK8_Nightly_Build_Report_(Hadoop2)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop2) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 jdk8 hadoop3 checks</font><br/>\n&#8211; For more information\
+            \ <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/128//JDK8_Nightly_Build_Report_(Hadoop3)/\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see jdk8 (hadoop3) report</a></p>\n\n\n<p><img class=\"emoticon\" src=\"\
+            https://issues.apache.org/jira/images/icons/emoticons/check.png\" height=\"\
+            16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"/> <font color=\"\
+            green\">+1 source release artifact</font><br/>\n&#8211; See build output\
+            \ for details.</p>\n\n\n<p><img class=\"emoticon\" src=\"https://issues.apache.org/jira/images/icons/emoticons/error.png\"\
+            \ height=\"16\" width=\"16\" align=\"absmiddle\" alt=\"\" border=\"0\"\
+            /> <font color=\"red\">-1 client integration test</font><br/>\n--Failed\
+            \ when running client tests on top of Hadoop 2. <a href=\"https://builds.apache.org/job/HBase%20Nightly/job/branch-2.2/128//artifact/output-integration/hadoop-2.log\"\
+            \ class=\"external-link\" target=\"_blank\" rel=\"nofollow noopener\"\
+            >see log for details</a>. (note that this means we didn't run on Hadoop\
+            \ 3)</p>"
+          '@author': hudson
+          '@created': Sun, 24 Mar 2019 23:40:43 +0000
+          '@id': '16800207'
+        - '#text': <p><a href="https://issues.apache.org/jira/browse/HBASE-21098"
+            title="Improve Snapshot Performance with Temporary Snapshot Directory
+            when rootDir on S3" class="issue-link" data-issue-key="HBASE-21098"><del>HBASE-21098</del></a>
+            was committed to branch-1.4 and branch-1 so fix is needed there too</p>
+          '@author': apurtell
+          '@created': Tue, 26 Mar 2019 23:33:02 +0000
+          '@id': '16802277'
+        - '#text': <p>Thanks <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=apurtell"
+            class="user-hover" rel="apurtell">apurtell</a>. I overlooked it. will
+            create another Jira to backport this issue to branch-1.</p>
+          '@author': brfrn169
+          '@created': Wed, 27 Mar 2019 05:08:37 +0000
+          '@id': '16802457'
+        - '#text': <p>Much appreciated <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=brfrn169"
+            class="user-hover" rel="brfrn169">brfrn169</a>!</p>
+          '@author': apurtell
+          '@created': Wed, 27 Mar 2019 18:50:36 +0000
+          '@id': '16803215'
+      created: Sat, 23 Mar 2019 15:00:58 +0000
+      customfields:
+        customfield:
+        - '@id': customfield_12310310
+          '@key': com.atlassian.jira.toolkit:attachments
+          customfieldname: Attachment count
+          customfieldvalues:
+            customfieldvalue: '1.0'
+        - '@id': customfield_12314020
+          '@key': com.atlassian.jira.plugins.jira-development-integration-plugin:devsummary
+          customfieldname: Development
+          customfieldvalues: null
+        - '@id': customfield_12313422
+          '@key': com.atlassian.jirafisheyeplugin:jobcheckbox
+          customfieldname: Enable Automatic Patch Review
+          customfieldvalues:
+            customfieldvalue: 'false'
+        - '@id': customfield_12310420
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Global Rank
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+        - '@id': customfield_12312521
+          '@key': com.atlassian.jira.toolkit:LastCommentDate
+          customfieldname: Last public comment date
+          customfieldvalues: 6 years, 13 weeks, 1 day ago
+        - '@id': customfield_12311820
+          '@key': com.pyxis.greenhopper.jira:gh-lexo-rank
+          customfieldname: Rank
+          customfieldvalues:
+            customfieldvalue: '0|z010s8:'
+        - '@id': customfield_12310920
+          '@key': com.pyxis.greenhopper.jira:gh-global-rank
+          customfieldname: Rank (Obsolete)
+          customfieldvalues:
+            customfieldvalue: '9223372036854775807'
+      description: "<p>It looks like after\_<a href=\"https://issues.apache.org/jira/browse/HBASE-21098\"\
+        \ title=\"Improve Snapshot Performance with Temporary Snapshot Directory when\
+        \ rootDir on S3\" class=\"issue-link\" data-issue-key=\"HBASE-21098\"><del>HBASE-21098</del></a>,\
+        \ taking a snapshot fails in local mode.</p>"
+      due: null
+      environment: null
+      fixVersion:
+      - 3.0.0-alpha-1
+      - 2.2.0
+      - 2.3.0
+      issuelinks:
+        issuelinktype:
+          '@id': '12310000'
+          name: Duplicate
+          outwardlinks:
+            '@description': duplicates
+            issuelink:
+              issuekey:
+                '#text': HBASE-22693
+                '@id': '13244945'
+      key:
+        '#text': HBASE-22095
+        '@id': '13223508'
+      labels: null
+      link: https://issues.apache.org/jira/browse/HBASE-22095
+      priority:
+        '#text': Major
+        '@iconUrl': https://issues.apache.org/jira/images/icons/priorities/major.svg
+        '@id': '3'
+      project:
+        '#text': HBase
+        '@id': '12310753'
+        '@key': HBASE
+      reporter:
+        '#text': Toshihiro Suzuki
+        '@username': brfrn169
+      resolution:
+        '#text': Fixed
+        '@id': '1'
+      resolved: Sun, 24 Mar 2019 04:58:01 +0000
+      status:
+        '#text': Resolved
+        '@description': A resolution has been taken, and it is awaiting verification
+          by reporter. From here issues are either reopened, or are closed.
+        '@iconUrl': https://issues.apache.org/jira/images/icons/statuses/resolved.png
+        '@id': '5'
+      statusCategory:
+        '@colorName': green
+        '@id': '3'
+        '@key': done
+      subtasks:
+        subtask:
+          '#text': HBASE-22118
+          '@id': '13224322'
+      summary: Taking a snapshot fails in local mode
+      title: '[HBASE-22095] Taking a snapshot fails in local mode'
+      type:
+        '#text': Bug
+        '@iconUrl': https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype
+        '@id': '1'
+      updated: Mon, 15 Jul 2019 12:38:47 +0000
+      votes: '0'
+      watches: '6'
+    language: en-uk
+    link: https://issues.apache.org/jira
+    title: ASF JIRA
